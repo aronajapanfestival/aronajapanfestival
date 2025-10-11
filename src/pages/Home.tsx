@@ -44,10 +44,9 @@ const Home = () => {
               </div>
 
               {/* Date Box */}
-              <div className="bg-primary text-primary-foreground p-8 mb-8 max-w-md border-4 border-foreground">
-                <p className="text-5xl md:text-7xl font-bold mb-2">15-16</p>
-                <p className="text-2xl md:text-3xl font-bold uppercase tracking-wider">
-                  Novembre 2025
+              <div className="bg-primary text-primary-foreground p-8 mb-8 max-w-md">
+                <p className="text-3xl md:text-4xl font-baskerville">
+                  15-16 Novembre 2025
                 </p>
               </div>
 
