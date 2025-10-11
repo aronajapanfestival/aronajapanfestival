@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
+import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-poster-bg">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-poster-bg">
+        {/* Seigaiha Pattern - Right Side */}
+        <SeigaihaPattern />
+        
         {/* Large Kitsune Image - Right Side */}
         <div className="absolute right-0 top-0 h-full w-1/2 md:w-2/5">
           <img 
@@ -89,7 +93,10 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 bg-card relative overflow-hidden">
+      <section className="py-24 bg-poster-bg relative overflow-hidden">
+        {/* Seigaiha Pattern */}
+        <SeigaihaPattern />
+        
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
