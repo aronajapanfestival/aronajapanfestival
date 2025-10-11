@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
-import posterImage from "@/assets/poster.jpg";
 import kitsuneImage from "@/assets/kitsune.png";
 
 const Home = () => {
@@ -12,9 +11,10 @@ const Home = () => {
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url(${posterImage})`,
-          backgroundSize: "cover",
+          backgroundImage: `url(${kitsuneImage})`,
+          backgroundSize: "contain",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="absolute inset-0 bg-background/90"></div>
