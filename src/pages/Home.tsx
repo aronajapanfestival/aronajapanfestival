@@ -7,9 +7,9 @@ import kitsuneImage from "@/assets/kitsune.png";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-poster-bg">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-poster-bg">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Seigaiha Pattern - Right Side */}
         <SeigaihaPattern />
         
@@ -93,7 +93,7 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 bg-poster-bg relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden">
         {/* Seigaiha Pattern */}
         <SeigaihaPattern />
         
