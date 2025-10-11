@@ -6,97 +6,138 @@ import kitsuneImage from "@/assets/kitsune.png";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${kitsuneImage})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-background/90"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Large Kitsune Image - Right Side */}
+        <div className="absolute right-0 top-0 h-full w-1/2 md:w-2/5">
+          <img 
+            src={kitsuneImage} 
+            alt="Kitsune" 
+            className="h-full w-full object-contain object-right opacity-90"
+          />
+        </div>
+
+        {/* Red Accent Bar */}
+        <div className="absolute top-0 left-0 w-2 md:w-3 h-full bg-primary"></div>
         
-        <div className="relative z-10 container mx-auto px-4 py-32 text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-              <span className="text-foreground">ARONA</span>
-              <br />
-              <span className="text-secondary">JAPAN</span>
-              <br />
-              <span className="text-foreground">FESTIVAL</span>
-            </h1>
-            
-            <div className="flex flex-col items-center space-y-2 mb-12">
-              <p className="text-4xl md:text-6xl font-bold text-primary">
-                15-16
-              </p>
-              <p className="text-2xl md:text-3xl font-bold text-primary uppercase tracking-wide">
-                Novembre 2025
-              </p>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16 text-lg">
-              <div className="flex items-center space-x-2">
-                <MapPin className="text-primary" size={24} />
-                <span className="text-foreground font-medium">Ca' de Pop, Via Roma 76/80</span>
+        <div className="relative z-10 container mx-auto px-6 md:px-12 py-20 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="animate-fade-in">
+              {/* Vertical Text Accent */}
+              <div className="flex items-start gap-8 mb-8">
+                <div className="hidden md:block writing-mode-vertical text-xl font-bold tracking-widest text-primary">
+                  文化祭
+                </div>
+                <div>
+                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none">
+                    <span className="block text-foreground">ARONA</span>
+                    <span className="block text-primary my-2">JAPAN</span>
+                    <span className="block text-foreground">FESTIVAL</span>
+                  </h1>
+                </div>
               </div>
-              <div className="hidden md:block w-px h-6 bg-border"></div>
-              <div className="flex items-center space-x-2">
-                <Calendar className="text-primary" size={24} />
-                <span className="text-foreground font-medium">Due giorni di cultura giapponese</span>
+
+              {/* Date Box */}
+              <div className="bg-primary text-primary-foreground p-8 mb-8 max-w-md border-4 border-foreground">
+                <p className="text-5xl md:text-7xl font-bold mb-2">15-16</p>
+                <p className="text-2xl md:text-3xl font-bold uppercase tracking-wider">
+                  Novembre 2025
+                </p>
               </div>
-            </div>
 
-            <div className="mb-16">
-              <Countdown />
-            </div>
+              {/* Location & Details */}
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <MapPin className="text-primary mt-1 flex-shrink-0" size={28} />
+                  <div>
+                    <p className="text-xl font-bold text-foreground">Ca' de Pop</p>
+                    <p className="text-lg text-muted-foreground">Via Roma 76/80, Arona</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Calendar className="text-primary mt-1 flex-shrink-0" size={28} />
+                  <p className="text-lg text-foreground font-medium">
+                    Due giorni di cultura giapponese
+                  </p>
+                </div>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide uppercase">
-                Iscriviti alla Newsletter
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-semibold tracking-wide uppercase">
-                Scopri il Programma
-              </Button>
+              {/* Countdown */}
+              <div className="mb-8">
+                <Countdown />
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/newsletter">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wide uppercase text-base">
+                    Newsletter
+                    <ArrowRight className="ml-2" size={20} />
+                  </Button>
+                </Link>
+                <Link to="/programma">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-bold tracking-wide uppercase text-base">
+                    Programma
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <img src={kitsuneImage} alt="Kitsune" className="w-32 h-32 mx-auto mb-8 animate-fade-in" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-              Un Viaggio nella Cultura Giapponese
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Il festival celebra la ricchezza della cultura giapponese attraverso conferenze, 
-              laboratori, spettacoli dal vivo, gastronomia tradizionale e molto altro. 
-              Un'esperienza immersiva nel cuore di Arona.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+      <section className="py-24 bg-card relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+              <div>
+                <div className="inline-block bg-primary text-primary-foreground px-6 py-2 font-bold uppercase tracking-wider mb-6">
+                  Il Festival
+                </div>
+                <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
+                  Un Viaggio nella Cultura Giapponese
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Il festival celebra la ricchezza della cultura giapponese attraverso conferenze, 
+                  laboratori, spettacoli dal vivo, gastronomia tradizionale e molto altro. 
+                  Un'esperienza immersiva nel cuore di Arona.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img 
+                  src={kitsuneImage} 
+                  alt="Kitsune" 
+                  className="w-64 h-64 md:w-80 md:h-80 object-contain animate-fade-in drop-shadow-2xl" 
+                />
+              </div>
+            </div>
+
+            {/* Activity Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: "Conferenze", value: "CONFERENZE" },
-                { label: "Gastronomia", value: "GASTRONOMIA" },
-                { label: "Libri", value: "LIBRI" },
-                { label: "Cultura", value: "CULTURA" },
-                { label: "Laboratori", value: "LABORATORI" },
-                { label: "Mostre", value: "MOSTRE" },
-                { label: "Film", value: "FILM" },
-                { label: "Conferenze", value: "CONFERENZE" },
+                "CONFERENZE",
+                "GASTRONOMIA",
+                "LIBRI",
+                "CULTURA",
+                "LABORATORI",
+                "MOSTRE",
+                "FILM",
+                "MUSICA",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-primary/5 border border-primary/20 text-center"
+                  className="group relative p-8 bg-background border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg"
                 >
-                  <p className="text-sm font-bold tracking-widest text-primary uppercase">
-                    {item.value}
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-all duration-300"></div>
+                  <p className="relative text-sm md:text-base font-bold tracking-widest text-primary uppercase text-center">
+                    {item}
                   </p>
                 </div>
               ))}
@@ -106,19 +147,24 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-24 bg-foreground text-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Non Perdere Nessun Aggiornamento
           </h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-12 opacity-80 max-w-3xl mx-auto">
             Iscriviti alla nostra newsletter per ricevere tutte le novità sul programma, 
             gli ospiti e le attività del festival.
           </p>
           <Link to="/newsletter">
-            <Button size="lg" variant="outline" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold tracking-wide uppercase border-2">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase text-lg px-12 py-6 h-auto border-4 border-primary shadow-xl">
               Iscriviti Ora
-              <ArrowRight className="ml-2" size={20} />
+              <ArrowRight className="ml-2" size={24} />
             </Button>
           </Link>
         </div>
