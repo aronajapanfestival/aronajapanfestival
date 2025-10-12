@@ -8,7 +8,10 @@ import ajfLogo from "@/assets/ajf-logo.png";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Red Accent Bar - Full Page */}
+      <div className="fixed top-0 left-0 w-2 md:w-3 h-full bg-primary z-50"></div>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Seigaiha Pattern - Right Side */}
@@ -22,9 +25,6 @@ const Home = () => {
             className="h-full w-full object-contain object-right opacity-90"
           />
         </div>
-
-        {/* Red Accent Bar */}
-        <div className="absolute top-0 left-0 w-2 md:w-3 h-full bg-primary"></div>
         
         <div className="relative z-10 container mx-auto px-6 md:px-12 py-20 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
