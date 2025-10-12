@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
-import ajfLogo from "@/assets/ajf-logo.png";
+import ajfLogo from "@/assets/ajf-logo-2.png";
 
 const Home = () => {
   return (
