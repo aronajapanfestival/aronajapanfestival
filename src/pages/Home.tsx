@@ -5,6 +5,7 @@ import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
 import ajfLogo from "@/assets/ajf-logo.png";
+import ajfLogoCircle from "@/assets/ajf-logo-circle.png";
 
 const Home = () => {
   return (
@@ -155,6 +156,11 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
+          <img 
+            src={ajfLogoCircle} 
+            alt="Arona Japan Festival" 
+            className="w-32 h-32 mx-auto mb-8"
+          />
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Non Perdere Nessun Aggiornamento
           </h2>
