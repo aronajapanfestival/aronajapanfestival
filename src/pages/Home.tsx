@@ -69,15 +69,15 @@ const Home = () => {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/newsletter">
+                <Link to="/programma">
                   <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wide uppercase text-base">
-                    Newsletter
+                    Programma
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
-                <Link to="/programma">
+                <Link to="/newsletter">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-bold tracking-wide uppercase text-base">
-                    Programma
+                    Newsletter
                   </Button>
                 </Link>
               </div>
