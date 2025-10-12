@@ -164,6 +164,9 @@ const Home = () => {
               className="w-48 h-48 md:w-64 md:h-64 object-contain animate-fade-in" 
             />
           </div>
+          <div className="flex justify-center mb-6">
+            <div className="w-[50px] h-[50px] bg-primary"></div>
+          </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Non Perdere Nessun Aggiornamento
           </h2>
