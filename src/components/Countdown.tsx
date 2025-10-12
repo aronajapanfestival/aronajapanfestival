@@ -28,7 +28,7 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
-    <div className="grid grid-cols-4 gap-2 md:gap-3 max-w-md mx-auto">
+    <div className="grid grid-cols-4 gap-2 md:gap-3 max-w-md">
       {[
         { value: timeLeft.days, label: "Giorni" },
         { value: timeLeft.hours, label: "Ore" },
