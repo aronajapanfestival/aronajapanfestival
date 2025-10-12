@@ -159,7 +159,7 @@ const Home = () => {
           <img 
             src={ajfLogoCircle} 
             alt="Arona Japan Festival" 
-            className="w-32 h-32 mx-auto mb-8"
+            className="w-40 h-40 mx-auto mb-8"
           />
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Non Perdere Nessun Aggiornamento
