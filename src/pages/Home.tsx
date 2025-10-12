@@ -5,6 +5,7 @@ import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
 import ajfLogo from "@/assets/ajf-logo-2.png";
+import ajfLogoRound from "@/assets/ajf-logo-round.png";
 
 const Home = () => {
   return (
@@ -113,7 +114,7 @@ const Home = () => {
               </div>
               <div className="flex justify-center">
                 <img 
-                  src={ajfLogo} 
+                  src={ajfLogoRound} 
                   alt="Arona Japan Festival Logo" 
                   className="w-64 h-64 md:w-80 md:h-80 object-contain animate-fade-in drop-shadow-2xl" 
                 />
