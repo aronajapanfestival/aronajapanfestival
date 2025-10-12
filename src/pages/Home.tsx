@@ -113,8 +113,8 @@ const Home = () => {
               </div>
               <div className="flex justify-center">
                 <img 
-                  src={kitsuneImage} 
-                  alt="Kitsune" 
+                  src={ajfLogo} 
+                  alt="Arona Japan Festival Logo" 
                   className="w-64 h-64 md:w-80 md:h-80 object-contain animate-fade-in drop-shadow-2xl" 
                 />
               </div>
