@@ -40,11 +40,11 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none">
-                    <span className="block text-foreground">ARONA</span>
-                    <span className="block text-primary my-2">JAPAN</span>
-                    <span className="block text-foreground">FESTIVAL</span>
-                  </h1>
+                  <img 
+                    src={ajfLogo} 
+                    alt="Arona Japan Festival" 
+                    className="w-full max-w-2xl h-auto"
+                  />
                 </div>
               </div>
 
