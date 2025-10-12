@@ -28,7 +28,7 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
-    <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-xl mx-auto">
+    <div className="grid grid-cols-4 gap-2 md:gap-3 max-w-md mx-auto">
       {[
         { value: timeLeft.days, label: "Giorni" },
         { value: timeLeft.hours, label: "Ore" },
@@ -36,8 +36,8 @@ const Countdown = () => {
         { value: timeLeft.seconds, label: "Secondi" },
       ].map((item) => (
         <div key={item.label} className="text-center">
-          <div className="bg-card border-2 border-primary rounded p-2 md:p-3 mb-2">
-            <span className="text-2xl md:text-3xl font-bold text-primary">
+          <div className="bg-card border-2 border-primary rounded p-2 mb-1">
+            <span className="text-xl md:text-2xl font-bold text-primary">
               {String(item.value).padStart(2, "0")}
             </span>
           </div>
