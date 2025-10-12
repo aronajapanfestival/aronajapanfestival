@@ -3,12 +3,11 @@ import patternImage from "@/assets/pattern.png";
 const SeigaihaPattern = () => {
   return (
     <div 
-      className="absolute top-0 right-0 h-full pointer-events-none opacity-90"
+      className="absolute top-0 right-0 h-full pointer-events-none opacity-90 w-8 md:w-[54px]"
       style={{
-        width: '54px',
         backgroundImage: `url(${patternImage})`,
         backgroundRepeat: 'repeat-y',
-        backgroundSize: '54px auto',
+        backgroundSize: '100% auto',
         backgroundPosition: 'right top'
       }}
     />
