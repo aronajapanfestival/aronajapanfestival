@@ -122,7 +122,7 @@ const Home = () => {
             </div>
 
             {/* Activity Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
               {[
                 "CONFERENZE",
                 "GASTRONOMIA",
