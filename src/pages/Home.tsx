@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
+import ajfLogo from "@/assets/ajf-logo.png";
 
 const Home = () => {
   return (
@@ -29,10 +30,14 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="animate-fade-in">
-              {/* Vertical Text Accent */}
+              {/* Logo Accent */}
               <div className="flex items-start gap-8 mb-8">
-                <div className="hidden md:block writing-mode-vertical text-xl font-bold tracking-widest text-primary">
-                  文化祭
+                <div className="hidden md:block">
+                  <img 
+                    src={ajfLogo} 
+                    alt="Arona Japan Festival Logo" 
+                    className="h-32 w-auto object-contain"
+                  />
                 </div>
                 <div>
                   <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none">
