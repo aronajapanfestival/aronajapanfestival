@@ -161,10 +161,10 @@ const Home = () => {
             alt="Arona Japan Festival" 
             className="w-40 h-40 mx-auto mb-8"
           />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-center">
             Non Perdere Nessun Aggiornamento
           </h2>
-          <p className="text-xl md:text-2xl mb-12 opacity-80 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-12 opacity-80 max-w-3xl mx-auto text-center">
             Iscriviti alla nostra newsletter per ricevere tutte le novità sul programma, 
             gli ospiti e le attività del festival.
           </p>
