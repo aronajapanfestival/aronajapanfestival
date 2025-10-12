@@ -30,22 +30,12 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="animate-fade-in">
-              {/* Logo Accent */}
-              <div className="flex items-start gap-8 mb-8">
-                <div className="hidden md:block">
-                  <img 
-                    src={ajfLogo} 
-                    alt="Arona Japan Festival Logo" 
-                    className="h-32 w-auto object-contain"
-                  />
-                </div>
-                <div>
+              <div>
                   <img 
                     src={ajfLogo} 
                     alt="Arona Japan Festival" 
                     className="w-full max-w-2xl h-auto"
                   />
-                </div>
               </div>
 
               {/* Date Box */}
