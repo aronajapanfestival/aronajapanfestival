@@ -30,7 +30,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="animate-fade-in">
-              <div>
+              <div className="mt-12">
                   <img 
                     src={ajfLogo} 
                     alt="Arona Japan Festival" 
