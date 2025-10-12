@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
-import ajfLogo from "@/assets/ajf-logo-2.png";
-import ajfLogoRound from "@/assets/ajf-logo-round.png";
-import ajfLogoCircle from "@/assets/ajf-logo.png";
+import ajfLogo from "@/assets/ajf-logo.png";
 
 const Home = () => {
   return (
@@ -115,8 +113,8 @@ const Home = () => {
               </div>
               <div className="flex justify-center">
                 <img 
-                  src={ajfLogoRound} 
-                  alt="Arona Japan Festival Logo" 
+                  src={kitsuneImage} 
+                  alt="Kitsune" 
                   className="w-64 h-64 md:w-80 md:h-80 object-contain animate-fade-in drop-shadow-2xl" 
                 />
               </div>
@@ -157,16 +155,6 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
-          <div className="flex justify-center mb-8">
-            <img 
-              src={ajfLogoCircle} 
-              alt="Arona Japan Festival" 
-              className="w-48 h-48 md:w-64 md:h-64 object-contain animate-fade-in" 
-            />
-          </div>
-          <div className="flex justify-center mb-6">
-            <div className="w-[50px] h-[50px] bg-primary"></div>
-          </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Non Perdere Nessun Aggiornamento
           </h2>
