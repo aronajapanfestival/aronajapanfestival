@@ -40,7 +40,7 @@ const Home = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <h1 className="font-glory text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wider text-center">
                       <span className="text-foreground">Arona</span><br />
-                      <span className="text-[14vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw]" style={{ color: '#6c8da1' }}>Japan</span><br />
+                      <span className="text-[20vw] sm:text-[16vw] md:text-[12vw] lg:text-[10vw]" style={{ color: '#6c8da1' }}>Japan</span><br />
                       <span className="text-foreground">Festival</span>
                     </h1>
                   </div>
