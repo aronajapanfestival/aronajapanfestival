@@ -35,14 +35,18 @@ const Home = () => {
                   <img 
                     src={ajfLogo} 
                     alt="Arona Japan Festival" 
-                    className="w-full max-w-2xl h-auto"
+                    className="w-full max-w-2xl h-auto opacity-50"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h1 className="font-glory text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wider text-center text-yellow-500">
-                      <span>Arona</span><br />
-                      <span className="text-[20vw] sm:text-[16vw] md:text-[12vw] lg:text-[10vw]">Japan</span><br />
-                      <span>Festival</span>
-                    </h1>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-0">
+                    <span className="font-glory text-[11vw] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[5vw] leading-none uppercase tracking-wider text-yellow-500">
+                      Arona
+                    </span>
+                    <span className="font-glory text-[18vw] sm:text-[14vw] md:text-[10vw] lg:text-[9vw] leading-none uppercase tracking-wider text-yellow-500 -mt-2">
+                      Japan
+                    </span>
+                    <span className="font-glory text-[11vw] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[5vw] leading-none uppercase tracking-wider text-yellow-500 -mt-2">
+                      Festival
+                    </span>
                   </div>
               </div>
 
