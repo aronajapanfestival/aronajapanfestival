@@ -38,10 +38,10 @@ const Home = () => {
                     className="w-full max-w-2xl h-auto"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <h1 className="font-glory text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wider text-center">
-                      <span className="text-foreground">Arona</span><br />
-                      <span className="text-[20vw] sm:text-[16vw] md:text-[12vw] lg:text-[10vw]" style={{ color: '#6c8da1' }}>Japan</span><br />
-                      <span className="text-foreground">Festival</span>
+                    <h1 className="font-glory text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wider text-center text-yellow-500">
+                      <span>Arona</span><br />
+                      <span className="text-[20vw] sm:text-[16vw] md:text-[12vw] lg:text-[10vw]">Japan</span><br />
+                      <span>Festival</span>
                     </h1>
                   </div>
               </div>
