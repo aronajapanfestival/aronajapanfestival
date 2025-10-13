@@ -38,7 +38,7 @@ const Home = () => {
                     className="w-full max-w-2xl h-auto opacity-50"
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-0">
-                    <span className="font-glory text-[11vw] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[5vw] leading-none uppercase tracking-wider text-yellow-500">
+                    <span className="font-glory text-[11vw] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[5vw] leading-none uppercase tracking-wider text-yellow-500 -ml-8 sm:-ml-12 md:-ml-16">
                       Arona
                     </span>
                     <span className="font-glory text-[18vw] sm:text-[14vw] md:text-[10vw] lg:text-[9vw] leading-none uppercase tracking-wider text-yellow-500 -mt-2">
