@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'baskerville': ['Libre Baskerville', 'serif'],
+        'glory': ['Glory Mathilda', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

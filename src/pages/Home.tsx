@@ -31,12 +31,17 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="animate-fade-in">
-              <div className="mt-12">
+              <div className="mt-12 relative">
                   <img 
                     src={ajfLogo} 
                     alt="Arona Japan Festival" 
                     className="w-full max-w-2xl h-auto"
                   />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h1 className="font-glory text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5.5vw] leading-none text-primary uppercase tracking-wider text-center">
+                      Arona<br />Japan<br />Festival
+                    </h1>
+                  </div>
               </div>
 
               {/* Date Box */}
