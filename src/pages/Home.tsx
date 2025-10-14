@@ -37,7 +37,7 @@ const Home = () => {
                     alt="Arona Japan Festival" 
                     className="w-full max-w-2xl h-auto opacity-50"
                   />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-0">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-0 max-w-[520px] mx-auto">
                     <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-yellow-500" style={{ marginLeft: '-230px' }}>
                       Arona
                     </span>
