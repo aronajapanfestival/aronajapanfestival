@@ -32,14 +32,14 @@ const Home = () => {
             {/* Left Content */}
             <div className="animate-fade-in">
               <div className="mt-12 relative">
-                  <div className="flex flex-col items-center justify-center gap-0 max-w-[520px] mx-auto">
-                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-black" style={{ marginLeft: '-15px' }}>
+                  <div className="flex flex-col items-start gap-0 max-w-[520px]">
+                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-black" style={{ marginLeft: '5%' }}>
                       Arona
                     </span>
                     <span className="font-glory text-[26vw] sm:text-[20vw] md:text-[16vw] lg:text-[14vw] xl:text-[180px] leading-none uppercase tracking-wider text-[#6c8da1] -mt-2">
                       Japan
                     </span>
-                    <span className="font-glory text-[16vw] sm:text-[12vw] md:text-[9vw] lg:text-[8vw] xl:text-[103px] leading-none uppercase tracking-wider text-black -mt-2">
+                    <span className="font-glory text-[16vw] sm:text-[12vw] md:text-[9vw] lg:text-[8vw] xl:text-[103px] leading-none uppercase tracking-wider text-black -mt-2" style={{ marginLeft: '10%' }}>
                       Festival
                     </span>
                   </div>
