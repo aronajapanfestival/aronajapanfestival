@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
             <img src={logo} alt="Arona Japan Festival" className="h-16 w-auto" />
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Un viaggio nella cultura giapponese nel cuore di Arona
-            </p>
+            <p className="text-sm text-muted-foreground max-w-xs">Un viaggio nella cultura giapponese 
+nel cuore di Arona
+          </p>
           </div>
 
           <div>
