@@ -98,6 +98,46 @@ const Home = () => {
         </div>
       </section>
 
+      {/* News Section */}
+      <section className="py-16 bg-foreground text-background relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">Ultime News</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Ospiti Speciali Annunciati",
+                image: kitsuneImage,
+                text: "Siamo entusiasti di annunciare la presenza di ospiti speciali che condivideranno la loro esperienza sulla cultura giapponese contemporanea..."
+              },
+              {
+                title: "Workshop di Calligrafia",
+                image: kitsuneImage,
+                text: "Iscriviti al nostro workshop di calligrafia giapponese, un'esperienza unica per imparare l'arte antica della scrittura tradizionale..."
+              },
+              {
+                title: "Menu Gastronomico Svelato",
+                image: kitsuneImage,
+                text: "Scopri il menu speciale del festival con piatti tradizionali preparati da chef esperti nella cucina giapponese autentica..."
+              }
+            ].map((news, index) => (
+              <div key={index} className="bg-background/10 backdrop-blur-sm border border-background/20 p-4 rounded hover:bg-background/15 transition-all duration-300">
+                <div className="flex gap-4">
+                  <img 
+                    src={news.image} 
+                    alt={news.title}
+                    className="w-20 h-20 object-cover rounded flex-shrink-0"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-lg mb-2 text-background">{news.title}</h3>
+                    <p className="text-sm text-background/80 line-clamp-3">{news.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Introduction Section */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Seigaiha Pattern */}
