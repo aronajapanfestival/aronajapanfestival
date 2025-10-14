@@ -101,7 +101,9 @@ const Home = () => {
       {/* News Section */}
       <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#2c2c2c' }}>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-white">Ultime News</h2>
+          <div className="inline-block bg-primary text-primary-foreground px-6 py-2 font-bold uppercase tracking-wider mb-8">
+            Ultime News
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
