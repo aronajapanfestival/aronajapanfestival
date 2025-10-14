@@ -19,7 +19,7 @@ const Home = () => {
         <SeigaihaPattern />
         
         {/* Large Kitsune Image - Right Side */}
-        <div className="absolute right-0 top-0 h-full w-3/5 md:w-1/2">
+        <div className="absolute right-0 top-0 h-full w-3/5 md:w-1/2 max-w-[600px]">
           <img 
             src={kitsuneImage} 
             alt="Kitsune" 
