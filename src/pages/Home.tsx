@@ -6,7 +6,6 @@ import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
 import ajfLogo from "@/assets/ajf-logo.png";
 import ajfLogoCircle from "@/assets/ajf-logo-circle.png";
-import redBrushDivider from "@/assets/red-brush-divider.png";
 
 const Home = () => {
   return (
@@ -99,19 +98,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Red Brush Divider */}
-      <div className="w-full h-8 relative">
-        <img 
-          src={redBrushDivider} 
-          alt="" 
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-
       {/* Introduction Section */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Seigaiha Pattern */}
         <SeigaihaPattern />
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-6xl mx-auto">
