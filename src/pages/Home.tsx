@@ -38,13 +38,13 @@ const Home = () => {
                     className="w-full max-w-2xl h-auto opacity-50"
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-0 max-w-[520px] mx-auto">
-                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-yellow-500" style={{ marginLeft: '-230px' }}>
+                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-black" style={{ marginLeft: '-230px' }}>
                       Arona
                     </span>
-                    <span className="font-glory text-[26vw] sm:text-[20vw] md:text-[16vw] lg:text-[14vw] xl:text-[180px] leading-none uppercase tracking-wider text-yellow-500 -mt-2">
+                    <span className="font-glory text-[26vw] sm:text-[20vw] md:text-[16vw] lg:text-[14vw] xl:text-[180px] leading-none uppercase tracking-wider text-[#6c8da1] -mt-2">
                       Japan
                     </span>
-                    <span className="font-glory text-[16vw] sm:text-[12vw] md:text-[9vw] lg:text-[8vw] xl:text-[103px] leading-none uppercase tracking-wider text-yellow-500 -mt-2">
+                    <span className="font-glory text-[16vw] sm:text-[12vw] md:text-[9vw] lg:text-[8vw] xl:text-[103px] leading-none uppercase tracking-wider text-black -mt-2">
                       Festival
                     </span>
                   </div>
