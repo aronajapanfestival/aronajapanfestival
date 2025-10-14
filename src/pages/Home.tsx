@@ -99,9 +99,9 @@ const Home = () => {
       </section>
 
       {/* News Section */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#e8e8e8' }}>
+      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#2c2c2c' }}>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-foreground">Ultime News</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-white">Ultime News</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -123,9 +123,9 @@ const Home = () => {
               <a 
                 key={index} 
                 href="#" 
-                className="block bg-white/50 backdrop-blur-sm border-2 border-foreground/20 p-4 rounded hover:border-primary hover:bg-white/70 transition-all duration-300 group cursor-pointer"
+                className="block bg-white/10 backdrop-blur-sm border-2 border-white/20 p-4 rounded hover:border-primary hover:bg-white/15 transition-all duration-300 group cursor-pointer"
               >
-                <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{news.title}</h3>
+                <h3 className="font-bold text-lg mb-3 text-white group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                 <div className="flex gap-4">
                   <img 
                     src={news.image} 
@@ -133,7 +133,7 @@ const Home = () => {
                     className="w-28 h-16 object-cover rounded flex-shrink-0"
                   />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-foreground/80 line-clamp-3">{news.text}</p>
+                    <p className="text-sm text-white/80 line-clamp-3">{news.text}</p>
                   </div>
                 </div>
               </a>
