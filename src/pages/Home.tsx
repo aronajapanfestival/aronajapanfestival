@@ -14,7 +14,7 @@ const Home = () => {
       <div className="fixed top-0 left-0 w-2 md:w-3 h-full bg-primary z-50"></div>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Seigaiha Pattern - Right Side */}
         <SeigaihaPattern />
         
