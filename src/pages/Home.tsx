@@ -33,7 +33,7 @@ const Home = () => {
             <div className="animate-fade-in">
               <div className="mt-12 relative">
                   <div className="flex flex-col items-center justify-center gap-0 max-w-[520px] mx-auto">
-                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-black" style={{ marginLeft: '-30px' }}>
+                    <span className="font-glory text-[14vw] sm:text-[10vw] md:text-[7.5vw] lg:text-[6.5vw] xl:text-[83px] leading-none uppercase tracking-wider text-black" style={{ marginLeft: '-15px' }}>
                       Arona
                     </span>
                     <span className="font-glory text-[26vw] sm:text-[20vw] md:text-[16vw] lg:text-[14vw] xl:text-[180px] leading-none uppercase tracking-wider text-[#6c8da1] -mt-2">
