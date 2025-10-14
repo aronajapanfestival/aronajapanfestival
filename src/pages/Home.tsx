@@ -129,11 +129,13 @@ const Home = () => {
               >
                 <h3 className="font-bold text-lg mb-3 text-background group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                 <div className="flex gap-4">
-                  <img 
-                    src={news.image} 
-                    alt={news.title}
-                    className="w-28 h-16 object-cover rounded flex-shrink-0"
-                  />
+                  <div className="bg-white rounded flex-shrink-0 p-2">
+                    <img 
+                      src={news.image} 
+                      alt={news.title}
+                      className="w-24 h-16 object-contain"
+                    />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm text-background/80 line-clamp-3">{news.text}</p>
                   </div>
