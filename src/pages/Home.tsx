@@ -70,7 +70,7 @@ const Home = () => {
               </div>
 
               {/* Countdown */}
-              <div className="mb-8">
+              <div className="mb-8 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:mr-12">
                 <Countdown />
               </div>
 
