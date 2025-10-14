@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
-
 const Footer = () => {
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
@@ -75,20 +73,10 @@ const Footer = () => {
               Social
             </h3>
             <div className="flex space-x-4">
-              <a
-                href="https://instagram.com/ajf-festival"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
+              <a href="https://instagram.com/ajf-festival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a
-                href="mailto:info@aronajapanfestival.it"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Email"
-              >
+              <a href="mailto:info@aronajapanfestival.it" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
@@ -101,13 +89,9 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Arona Japan Festival. Tutti i diritti riservati.
-          </p>
+          <p className="text-sm text-muted-foreground">2025 Arona Japan Festival</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
