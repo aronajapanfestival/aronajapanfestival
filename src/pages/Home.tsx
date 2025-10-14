@@ -99,7 +99,7 @@ const Home = () => {
       </section>
 
       {/* News Section */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#2c2c2c' }}>
+      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#3a3a3a' }}>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="inline-block bg-primary text-primary-foreground px-6 py-2 font-bold uppercase tracking-wider mb-8">
             Ultime News
