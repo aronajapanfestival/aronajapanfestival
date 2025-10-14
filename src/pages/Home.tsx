@@ -99,7 +99,7 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden" style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Seigaiha Pattern */}
         <SeigaihaPattern />
         
