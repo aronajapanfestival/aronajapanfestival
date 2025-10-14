@@ -1,4 +1,4 @@
-import patternImage from "@/assets/pattern.png";
+import patternImage from "@/assets/pattern-2.png";
 
 const SeigaihaPattern = () => {
   return (
