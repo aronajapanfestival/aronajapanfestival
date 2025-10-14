@@ -120,7 +120,11 @@ const Home = () => {
                 text: "Scopri il menu speciale del festival con piatti tradizionali preparati da chef esperti nella cucina giapponese autentica..."
               }
             ].map((news, index) => (
-              <div key={index} className="bg-background/10 backdrop-blur-sm border-2 border-background/20 p-4 rounded hover:border-primary hover:bg-background/15 transition-all duration-300 group">
+              <a 
+                key={index} 
+                href="#" 
+                className="block bg-background/10 backdrop-blur-sm border-2 border-background/20 p-4 rounded hover:border-primary hover:bg-background/15 transition-all duration-300 group cursor-pointer"
+              >
                 <h3 className="font-bold text-lg mb-3 text-background group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                 <div className="flex gap-4">
                   <img 
@@ -132,7 +136,7 @@ const Home = () => {
                     <p className="text-sm text-background/80 line-clamp-3">{news.text}</p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
