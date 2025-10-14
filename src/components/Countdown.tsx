@@ -28,12 +28,11 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
-    <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-md md:max-w-lg">
+    <div className="grid grid-cols-3 gap-2 md:gap-4 max-w-md md:max-w-lg">
       {[
         { value: timeLeft.days, label: "Giorni" },
         { value: timeLeft.hours, label: "Ore" },
         { value: timeLeft.minutes, label: "Minuti" },
-        { value: timeLeft.seconds, label: "Secondi" },
       ].map((item) => (
         <div key={item.label} className="text-center">
           <div className="bg-card border-2 border-primary rounded p-2 md:p-3 mb-1">
