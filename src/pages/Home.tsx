@@ -222,7 +222,7 @@ const Home = () => {
             gli ospiti e le attività del festival.
           </p>
           <Link to="/newsletter">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase text-lg px-12 py-6 h-auto shadow-xl">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase text-lg shadow-xl">
               Iscriviti Ora
               <ArrowRight className="ml-2" size={24} />
             </Button>
