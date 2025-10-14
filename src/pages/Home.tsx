@@ -69,11 +69,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Countdown */}
-              <div className="mb-8 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:mr-12">
-                <Countdown />
-              </div>
-
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/programma">
@@ -89,6 +84,16 @@ const Home = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Right Content - Countdown on desktop */}
+            <div className="hidden lg:flex justify-center items-start pt-32">
+              <Countdown />
+            </div>
+          </div>
+          
+          {/* Countdown on mobile */}
+          <div className="lg:hidden mt-8">
+            <Countdown />
           </div>
         </div>
       </section>
