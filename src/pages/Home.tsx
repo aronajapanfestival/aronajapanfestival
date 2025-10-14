@@ -99,7 +99,7 @@ const Home = () => {
       </section>
 
       {/* News Section */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#6c8da1' }}>
+      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#e8e8e8' }}>
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-foreground">Ultime News</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
