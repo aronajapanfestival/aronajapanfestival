@@ -86,7 +86,7 @@ const Home = () => {
             </div>
 
             {/* Right Content - Countdown on desktop */}
-            <div className="hidden lg:flex justify-center items-start pt-32">
+            <div className="hidden lg:flex justify-center items-end">
               <Countdown />
             </div>
           </div>
