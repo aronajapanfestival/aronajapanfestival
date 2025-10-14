@@ -121,6 +121,7 @@ const Home = () => {
               }
             ].map((news, index) => (
               <div key={index} className="bg-background/10 backdrop-blur-sm border-2 border-background/20 p-4 rounded hover:border-primary hover:bg-background/15 transition-all duration-300 group">
+                <h3 className="font-bold text-lg mb-3 text-background group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                 <div className="flex gap-4">
                   <img 
                     src={news.image} 
@@ -128,7 +129,6 @@ const Home = () => {
                     className="w-28 h-16 object-cover rounded flex-shrink-0"
                   />
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-lg mb-2 text-background group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                     <p className="text-sm text-background/80 line-clamp-3">{news.text}</p>
                   </div>
                 </div>
