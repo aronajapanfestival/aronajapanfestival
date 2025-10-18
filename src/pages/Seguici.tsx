@@ -86,14 +86,14 @@ const Seguici = () => {
           </div>
 
           {/* Social Media Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Instagram */}
-            <div className="bg-card border-2 border-border p-6 rounded-lg">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
               <div className="flex items-center gap-2 mb-4">
                 <Instagram className="text-primary" size={24} />
-                <h2 className="text-2xl font-bold text-foreground">Instagram</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">Instagram</h2>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center overflow-hidden">
                 <blockquote
                   className="instagram-media"
                   data-instgrm-permalink="https://www.instagram.com/aronajapanfestival/"
@@ -104,17 +104,17 @@ const Seguici = () => {
                     borderRadius: "3px",
                     boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
                     margin: "1px",
-                    maxWidth: "540px",
-                    minWidth: "326px",
+                    maxWidth: "100%",
+                    minWidth: "auto",
                     padding: 0,
-                    width: "calc(100% - 2px)",
+                    width: "100%",
                   }}
                 />
                 <a
                   href="https://www.instagram.com/aronajapanfestival/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold"
+                  className="mt-4 text-primary hover:underline font-bold text-sm"
                 >
                   @aronajapanfestival
                 </a>
@@ -122,12 +122,12 @@ const Seguici = () => {
             </div>
 
             {/* Facebook */}
-            <div className="bg-card border-2 border-border p-6 rounded-lg">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
               <div className="flex items-center gap-2 mb-4">
                 <Facebook className="text-primary" size={24} />
-                <h2 className="text-2xl font-bold text-foreground">Facebook</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">Facebook</h2>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center overflow-hidden">
                 <div id="fb-root"></div>
                 <div
                   className="fb-page"
@@ -153,7 +153,7 @@ const Seguici = () => {
                   href="https://www.facebook.com/aronajapanfestival"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold"
+                  className="mt-4 text-primary hover:underline font-bold text-sm"
                 >
                   @aronajapanfestival
                 </a>
@@ -161,7 +161,7 @@ const Seguici = () => {
             </div>
 
             {/* TikTok */}
-            <div className="bg-card border-2 border-border p-6 rounded-lg md:col-span-2 lg:col-span-1">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <svg
                   className="text-primary"
@@ -172,15 +172,15 @@ const Seguici = () => {
                 >
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
-                <h2 className="text-2xl font-bold text-foreground">TikTok</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">TikTok</h2>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center overflow-hidden">
                 <blockquote
                   className="tiktok-embed"
                   cite="https://www.tiktok.com/@aronajapanfestival"
                   data-unique-id="aronajapanfestival"
                   data-embed-type="creator"
-                  style={{ maxWidth: "780px", minWidth: "288px" }}
+                  style={{ maxWidth: "100%", minWidth: "auto", width: "100%" }}
                 >
                   <section>
                     <a
@@ -195,7 +195,7 @@ const Seguici = () => {
                   href="https://www.tiktok.com/@aronajapanfestival"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold"
+                  className="mt-4 text-primary hover:underline font-bold text-sm"
                 >
                   @aronajapanfestival
                 </a>
