@@ -108,22 +108,22 @@ const Festival = () => {
           </Carousel>
           
           {/* Frecce sotto - visibili solo su mobile */}
-          <div className="flex md:hidden justify-center gap-4 mt-6">
+          <div className="flex md:hidden justify-center gap-3 mt-6">
             <button 
               onClick={scrollPrev}
-              className="p-4 bg-white text-black border-2 border-white rounded-full hover:bg-black hover:text-white transition-colors"
+              className="p-2 bg-white text-black border border-white rounded-full hover:bg-black hover:text-white transition-colors"
               aria-label="Immagine precedente"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <button 
               onClick={scrollNext}
-              className="p-4 bg-white text-black border-2 border-white rounded-full hover:bg-black hover:text-white transition-colors"
+              className="p-2 bg-white text-black border border-white rounded-full hover:bg-black hover:text-white transition-colors"
               aria-label="Immagine successiva"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
