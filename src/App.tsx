@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Festival from "./pages/Festival";
 import Programma from "./pages/Programma";
+import Installazioni from "./pages/Installazioni";
 import Newsletter from "./pages/Newsletter";
 import Contatti from "./pages/Contatti";
 import NotFound from "./pages/NotFound";
@@ -27,10 +28,10 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/festival" element={<Festival />} />
               <Route path="/programma" element={<Programma />} />
+              <Route path="/installazioni" element={<Installazioni />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/contatti" element={<Contatti />} />
               {/* Placeholder routes */}
-              <Route path="/installazioni" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Installazioni - Coming Soon</h1></div>} />
               <Route path="/protagonisti" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Protagonisti - Coming Soon</h1></div>} />
               <Route path="/venue" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Venue - Coming Soon</h1></div>} />
               <Route path="/media" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Media - Coming Soon</h1></div>} />
