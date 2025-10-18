@@ -17,16 +17,14 @@ const newsData: NewsItem[] = [
     slug: "inaugurazione-festival-2024",
     title: "Inaugurazione Festival 2024: Un Successo Straordinario",
     date: "2024-10-15",
-    preview: "La prima edizione dell'Arona Japan Festival ha superato ogni aspettativa, con migliaia di visitatori che hanno partecipato alle attività culturali giapponesi...",
-    image: "/hero-bg.png"
+    preview: "La prima edizione dell'Arona Japan Festival ha superato ogni aspettativa, con migliaia di visitatori che hanno partecipato alle attività culturali giapponesi..."
   },
   {
     id: "2",
     slug: "workshop-calligrafia-giapponese",
     title: "Workshop di Calligrafia Giapponese: Grande Partecipazione",
     date: "2024-10-10",
-    preview: "Il workshop di calligrafia giapponese ha registrato il tutto esaurito. I partecipanti hanno avuto l'opportunità di imparare l'arte dello shodo con maestri esperti...",
-    image: "/bg.png"
+    preview: "Il workshop di calligrafia giapponese ha registrato il tutto esaurito. I partecipanti hanno avuto l'opportunità di imparare l'arte dello shodo con maestri esperti..."
   },
   {
     id: "3",
@@ -75,42 +73,29 @@ const News = () => {
             {newsData.map((news) => (
               <Link key={news.id} to={`/news/${news.slug}`}>
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
-                  <div className="flex flex-col md:flex-row">
-                    {news.image && (
-                      <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                        <img
-                          src={news.image}
-                          alt={news.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <div className={news.image ? "md:w-2/3" : "w-full"}>
-                      <CardHeader>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                          <Calendar size={16} />
-                          <time dateTime={news.date}>
-                            {new Date(news.date).toLocaleDateString("it-IT", {
-                              day: "numeric",
-                              month: "long",
-                              year: "numeric"
-                            })}
-                          </time>
-                        </div>
-                        <CardTitle className="text-xl md:text-2xl group-hover:text-primary transition-colors">
-                          {news.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground line-clamp-3">
-                          {news.preview}
-                        </p>
-                        <span className="inline-block mt-4 text-primary font-semibold group-hover:underline">
-                          Leggi di più →
-                        </span>
-                      </CardContent>
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <Calendar size={16} />
+                      <time dateTime={news.date}>
+                        {new Date(news.date).toLocaleDateString("it-IT", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric"
+                        })}
+                      </time>
                     </div>
-                  </div>
+                    <CardTitle className="text-xl md:text-2xl group-hover:text-primary transition-colors">
+                      {news.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground line-clamp-3">
+                      {news.preview}
+                    </p>
+                    <span className="inline-block mt-4 text-primary font-semibold group-hover:underline">
+                      Leggi di più →
+                    </span>
+                  </CardContent>
                 </Card>
               </Link>
             ))}
