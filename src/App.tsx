@@ -10,7 +10,7 @@ import Festival from "./pages/Festival";
 import Programma from "./pages/Programma";
 import Installazioni from "./pages/Installazioni";
 import Protagonisti from "./pages/Protagonisti";
-import Venue from "./pages/Venue";
+import DoveSiamo from "./pages/DoveSiamo";
 import Newsletter from "./pages/Newsletter";
 import Contatti from "./pages/Contatti";
 import Seguici from "./pages/Seguici";
@@ -33,7 +33,7 @@ const App = () => (
               <Route path="/programma" element={<Programma />} />
               <Route path="/installazioni" element={<Installazioni />} />
               <Route path="/protagonisti" element={<Protagonisti />} />
-              <Route path="/venue" element={<Venue />} />
+              <Route path="/dove-siamo" element={<DoveSiamo />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/contatti" element={<Contatti />} />
               <Route path="/seguici" element={<Seguici />} />

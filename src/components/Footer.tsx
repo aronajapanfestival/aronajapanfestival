@@ -38,8 +38,8 @@ nel cuore di Arona
                 </Link>
               </li>
               <li>
-                <Link to="/venue" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Venue
+                <Link to="/dove-siamo" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Dove Siamo
                 </Link>
               </li>
             </ul>

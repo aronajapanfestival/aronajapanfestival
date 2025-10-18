@@ -13,7 +13,7 @@ const Navigation = () => {
     { to: "/programma", label: "Programma" },
     { to: "/installazioni", label: "Installazioni" },
     { to: "/protagonisti", label: "Protagonisti" },
-    { to: "/venue", label: "Venue" },
+    { to: "/dove-siamo", label: "Dove Siamo" },
     { to: "/media", label: "Media" },
   ];
 

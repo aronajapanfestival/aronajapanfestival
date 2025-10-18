@@ -1,7 +1,7 @@
 import kitsuneImage from "@/assets/kitsune.png";
 import { MapPin, Clock, Euro } from "lucide-react";
 
-const Venue = () => {
+const DoveSiamo = () => {
   return (
     <div className="min-h-screen pt-20">
       <section className="py-16">
@@ -10,7 +10,7 @@ const Venue = () => {
             <div className="text-center mb-16">
               <img src={kitsuneImage} alt="Kitsune" className="w-24 h-24 mx-auto mb-8" />
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-                La Venue
+                Dove Siamo
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
                 Ca' de Pop - Casa del Popolo di Arona
@@ -69,7 +69,7 @@ const Venue = () => {
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     La tessera ARCI è valida per l'anno in corso e permette l'accesso a tutti gli eventi 
                     del festival e alle strutture ARCI su tutto il territorio nazionale. Il tesseramento 
-                    può essere effettuato direttamente all'ingresso della venue.
+                    può essere effettuato direttamente all'ingresso della sede.
                   </p>
                   <div className="bg-card p-4 rounded border border-border">
                     <p className="text-sm text-muted-foreground">
@@ -135,7 +135,7 @@ const Venue = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Mappa della venue"
+                  title="Mappa della sede"
                 ></iframe>
               </div>
 
@@ -143,14 +143,14 @@ const Venue = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-2">In Auto</h3>
                   <p>
-                    La venue si trova nel centro di Arona, facilmente raggiungibile dall'autostrada A26. 
+                    La sede si trova nel centro di Arona, facilmente raggiungibile dall'autostrada A26. 
                     Parcheggi disponibili nelle vicinanze.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-2">In Treno</h3>
                   <p>
-                    La stazione ferroviaria di Arona dista circa 10 minuti a piedi dalla venue.
+                    La stazione ferroviaria di Arona dista circa 10 minuti a piedi dalla sede.
                   </p>
                 </div>
                 <div>
@@ -168,4 +168,4 @@ const Venue = () => {
   );
 };
 
-export default Venue;
+export default DoveSiamo;
