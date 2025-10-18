@@ -64,36 +64,42 @@ const Festival = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div>
-                <h2 className="text-3xl font-bold mb-4 text-primary text-center">Galleria</h2>
-                <p className="text-lg text-muted-foreground text-center mb-8">
-                  Alcuni momenti del festival
-                </p>
-                <Carousel className="w-full max-w-5xl mx-auto">
-                  <CarouselContent>
-                    {[
-                      { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
-                      { src: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800", alt: "Cultura giapponese" },
-                      { src: "https://images.unsplash.com/photo-1576891230932-b35cea92ff0e?w=800", alt: "Cibo giapponese" },
-                      { src: "https://images.unsplash.com/photo-1547618229-ade8a48f3908?w=800", alt: "Festival giapponese" },
-                    ].map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-              </div>
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {[
+                { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
+                { src: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800", alt: "Cultura giapponese" },
+                { src: "https://images.unsplash.com/photo-1576891230932-b35cea92ff0e?w=800", alt: "Cibo giapponese" },
+                { src: "https://images.unsplash.com/photo-1547618229-ade8a48f3908?w=800", alt: "Festival giapponese" },
+              ].map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-6 bg-white">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-[400px] md:h-[500px] object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="text-white border-white" />
+            <CarouselNext className="text-white border-white" />
+          </Carousel>
+        </div>
+      </section>
 
+      <section className="py-24 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-12">
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-primary">Gli Organizzatori</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
