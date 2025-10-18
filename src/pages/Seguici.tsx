@@ -89,10 +89,18 @@ const Seguici = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Instagram */}
             <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2">
                 <Instagram className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Instagram</h2>
               </div>
+              <a
+                href="https://www.instagram.com/aronajapanfestival/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-4 text-primary hover:underline font-bold text-sm"
+              >
+                @aronajapanfestival
+              </a>
               <div className="flex flex-col items-center overflow-hidden">
                 <blockquote
                   className="instagram-media"
@@ -110,23 +118,23 @@ const Seguici = () => {
                     width: "100%",
                   }}
                 />
-                <a
-                  href="https://www.instagram.com/aronajapanfestival/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold text-sm"
-                >
-                  @aronajapanfestival
-                </a>
               </div>
             </div>
 
             {/* Facebook */}
             <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2">
                 <Facebook className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Facebook</h2>
               </div>
+              <a
+                href="https://www.facebook.com/aronajapanfestival"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-4 text-primary hover:underline font-bold text-sm"
+              >
+                @aronajapanfestival
+              </a>
               <div className="flex flex-col items-center overflow-hidden">
                 <div id="fb-root"></div>
                 <div
@@ -149,20 +157,12 @@ const Seguici = () => {
                     </a>
                   </blockquote>
                 </div>
-                <a
-                  href="https://www.facebook.com/aronajapanfestival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold text-sm"
-                >
-                  @aronajapanfestival
-                </a>
               </div>
             </div>
 
             {/* TikTok */}
             <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="text-primary"
                   width="24"
@@ -174,6 +174,14 @@ const Seguici = () => {
                 </svg>
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">TikTok</h2>
               </div>
+              <a
+                href="https://www.tiktok.com/@aronajapanfestival"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-4 text-primary hover:underline font-bold text-sm"
+              >
+                @aronajapanfestival
+              </a>
               <div className="flex flex-col items-center overflow-hidden">
                 <blockquote
                   className="tiktok-embed"
@@ -191,14 +199,6 @@ const Seguici = () => {
                     </a>
                   </section>
                 </blockquote>
-                <a
-                  href="https://www.tiktok.com/@aronajapanfestival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 text-primary hover:underline font-bold text-sm"
-                >
-                  @aronajapanfestival
-                </a>
               </div>
             </div>
           </div>

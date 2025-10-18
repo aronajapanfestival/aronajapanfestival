@@ -14,7 +14,7 @@ const Navigation = () => {
     { to: "/installazioni", label: "Installazioni" },
     { to: "/protagonisti", label: "Protagonisti" },
     { to: "/dove-siamo", label: "Dove Siamo" },
-    { to: "/media", label: "Media" },
+    { to: "/seguici", label: "Seguici" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
