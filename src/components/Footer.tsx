@@ -28,6 +28,11 @@ nel cuore di Arona
                 </Link>
               </li>
               <li>
+                <Link to="/installazioni" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Installazioni
+                </Link>
+              </li>
+              <li>
                 <Link to="/protagonisti" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Protagonisti
                 </Link>
