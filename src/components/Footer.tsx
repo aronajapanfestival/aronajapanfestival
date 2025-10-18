@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
 const Footer = () => {
   return <footer className="bg-card border-t border-border">
@@ -75,11 +75,17 @@ nel cuore di Arona
 
           <div>
             <h3 className="text-sm font-bold tracking-wide uppercase mb-4 text-foreground">
-              Social
+              Media
             </h3>
             <div className="flex space-x-4">
               <a href="https://instagram.com/ajf-festival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com/ajf-festival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+                <Facebook size={20} />
+              </a>
+              <a href="https://tiktok.com/@ajf-festival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
               </a>
               <a href="mailto:info@aronajapanfestival.it" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
                 <Mail size={20} />
