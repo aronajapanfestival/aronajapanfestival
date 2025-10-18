@@ -83,19 +83,21 @@ const Protagonisti = () => {
                   className="bg-card border-4 border-border hover:border-primary transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 overflow-hidden"
                 >
                   {/* Photo - Panini style */}
-                  <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-muted to-background">
+                  <div className="relative aspect-[3/3.5] overflow-hidden bg-gradient-to-b from-muted to-background">
                     <img
                       src={person.image}
                       alt={person.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                      <h3 className="text-xl font-bold text-white mb-1">
-                        {person.name}
-                      </h3>
-                      <p className="text-sm font-semibold text-primary uppercase tracking-wide">
-                        {person.role}
-                      </p>
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <div className="bg-black/80 backdrop-blur-sm p-3 rounded">
+                        <h3 className="text-lg font-bold text-white mb-1">
+                          {person.name}
+                        </h3>
+                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">
+                          {person.role}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
