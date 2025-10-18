@@ -69,9 +69,9 @@ const News = () => {
       {/* News List */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto">
             {newsData.map((news) => (
-              <Link key={news.id} to={`/news/${news.slug}`}>
+              <Link key={news.id} to={`/news/${news.slug}`} className="block mb-8">
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
                   <CardHeader>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
