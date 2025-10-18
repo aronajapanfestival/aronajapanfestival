@@ -72,7 +72,7 @@ const Home = () => {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/programma">
-                  <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wide uppercase text-base">
+                  <Button size="lg" className="w-full sm:w-auto">
                     Programma
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
@@ -224,7 +224,7 @@ const Home = () => {
             gli ospiti e le attività del festival.
           </p>
           <Link to="/newsletter">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase text-lg shadow-xl">
+            <Button size="lg" className="shadow-xl">
               Iscriviti Ora
               <ArrowRight className="ml-2" size={24} />
             </Button>
