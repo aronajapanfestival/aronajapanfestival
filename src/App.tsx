@@ -13,6 +13,7 @@ import Protagonisti from "./pages/Protagonisti";
 import Venue from "./pages/Venue";
 import Newsletter from "./pages/Newsletter";
 import Contatti from "./pages/Contatti";
+import Seguici from "./pages/Seguici";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,8 +36,9 @@ const App = () => (
               <Route path="/venue" element={<Venue />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/contatti" element={<Contatti />} />
+              <Route path="/seguici" element={<Seguici />} />
               {/* Placeholder routes */}
-              <Route path="/media" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Media - Coming Soon</h1></div>} />
+              <Route path="/media" element={<Seguici />} />
               <Route path="/news" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">News & Comunicati - Coming Soon</h1></div>} />
               <Route path="/privacy" element={<div className="min-h-screen pt-20 flex items-center justify-center"><h1 className="text-4xl font-bold">Privacy & GDPR - Coming Soon</h1></div>} />
               <Route path="*" element={<NotFound />} />
