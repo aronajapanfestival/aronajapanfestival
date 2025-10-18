@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const Festival = () => {
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-24 bg-card">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -96,7 +96,7 @@ const Festival = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-card">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-12">
