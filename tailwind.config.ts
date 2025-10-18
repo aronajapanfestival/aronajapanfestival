@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         'baskerville': ['Libre Baskerville', 'serif'],
         'glory': ['Glory Mathilda', 'serif'],
+        'playfair': ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
