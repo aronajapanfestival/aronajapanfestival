@@ -1,4 +1,5 @@
 import kitsuneImage from "@/assets/kitsune.png";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Festival = () => {
   return (
@@ -62,6 +63,35 @@ const Festival = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold mb-4 text-primary text-center">Galleria</h2>
+                <p className="text-lg text-muted-foreground text-center mb-8">
+                  Alcuni momenti del festival
+                </p>
+                <Carousel className="w-full max-w-5xl mx-auto">
+                  <CarouselContent>
+                    {[
+                      { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
+                      { src: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800", alt: "Cultura giapponese" },
+                      { src: "https://images.unsplash.com/photo-1576891230932-b35cea92ff0e?w=800", alt: "Cibo giapponese" },
+                      { src: "https://images.unsplash.com/photo-1547618229-ade8a48f3908?w=800", alt: "Festival giapponese" },
+                    ].map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
               </div>
 
               <div>
