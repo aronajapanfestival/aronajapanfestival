@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import kitsuneImage from "@/assets/kitsune.png";
 
 const Programma = () => {
   const [selectedDay, setSelectedDay] = useState<"day1" | "day2">("day1");
@@ -36,6 +37,7 @@ const Programma = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
+              <img src={kitsuneImage} alt="Kitsune" className="w-24 h-24 mx-auto mb-8" />
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
                 Programma
               </h1>
