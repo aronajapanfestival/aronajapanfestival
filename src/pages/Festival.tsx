@@ -71,7 +71,7 @@ const Festival = () => {
 
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <Carousel className="w-full max-w-5xl mx-auto">
+          <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {[
                 { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
@@ -90,8 +90,8 @@ const Festival = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="text-white border-white" />
-            <CarouselNext className="text-white border-white" />
+            <CarouselPrevious className="bg-black text-white border-white hover:bg-white hover:text-black" />
+            <CarouselNext className="bg-black text-white border-white hover:bg-white hover:text-black" />
           </Carousel>
         </div>
       </section>
