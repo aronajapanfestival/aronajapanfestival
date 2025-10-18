@@ -12,9 +12,18 @@ const Venue = () => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
                 La Venue
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground mb-6">
                 Ca' de Pop - Casa del Popolo di Arona
               </p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Via+Roma+76+Arona+Italy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded hover:bg-primary/90 transition-colors"
+              >
+                <MapPin size={20} />
+                Visualizza su Google Maps
+              </a>
             </div>
 
             {/* Location Info */}
@@ -111,10 +120,25 @@ const Venue = () => {
             </div>
 
             {/* How to Reach */}
-            <div className="p-8 bg-card border-2 border-border">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">
+            <div className="p-8 bg-card border-2 border-primary">
+              <h2 className="text-2xl font-bold mb-6 text-foreground">
                 Come Raggiungerci
               </h2>
+              
+              {/* Google Maps Embed */}
+              <div className="mb-6 rounded overflow-hidden border-2 border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.8!2d8.558!3d45.757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDQ1JzI1LjIiTiA4wrAzMyczMC40IkU!5e0!3m2!1sit!2sit!4v1234567890"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mappa della venue"
+                ></iframe>
+              </div>
+
               <div className="space-y-4 text-muted-foreground">
                 <div>
                   <h3 className="font-bold text-foreground mb-2">In Auto</h3>
