@@ -47,12 +47,12 @@ const Programma = () => {
             </div>
 
             {/* Day Selection */}
-            <div className="flex justify-center gap-4 mb-12">
+            <div className="flex flex-col md:flex-row justify-center gap-3 mb-12 px-4">
               <Button
                 size="lg"
                 variant={selectedDay === "day1" ? "default" : "outline"}
                 onClick={() => setSelectedDay("day1")}
-                className="font-semibold tracking-wide uppercase"
+                className="font-semibold tracking-wide uppercase w-full md:w-auto"
               >
                 15 Novembre - Giorno 1
               </Button>
@@ -60,7 +60,7 @@ const Programma = () => {
                 size="lg"
                 variant={selectedDay === "day2" ? "default" : "outline"}
                 onClick={() => setSelectedDay("day2")}
-                className="font-semibold tracking-wide uppercase"
+                className="font-semibold tracking-wide uppercase w-full md:w-auto"
               >
                 16 Novembre - Giorno 2
               </Button>
