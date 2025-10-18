@@ -30,7 +30,7 @@ const Installazioni = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
