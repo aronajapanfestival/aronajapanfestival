@@ -1,7 +1,19 @@
 import kitsuneImage from "@/assets/kitsune.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 const Festival = () => {
+  const [api, setApi] = useState<CarouselApi>();
+
+  const scrollPrev = () => {
+    api?.scrollPrev();
+  };
+
+  const scrollNext = () => {
+    api?.scrollNext();
+  };
+
   return (
     <div className="min-h-screen pt-20">
       <section className="py-16">
@@ -71,7 +83,7 @@ const Festival = () => {
 
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel setApi={setApi} className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {[
                 { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
@@ -90,9 +102,32 @@ const Festival = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-black text-white border-white hover:bg-white hover:text-black" />
-            <CarouselNext className="bg-black text-white border-white hover:bg-white hover:text-black" />
+            {/* Frecce laterali - visibili solo su desktop */}
+            <CarouselPrevious className="hidden md:flex bg-black text-white border-white hover:bg-white hover:text-black" />
+            <CarouselNext className="hidden md:flex bg-black text-white border-white hover:bg-white hover:text-black" />
           </Carousel>
+          
+          {/* Frecce sotto - visibili solo su mobile */}
+          <div className="flex md:hidden justify-center gap-4 mt-6">
+            <button 
+              onClick={scrollPrev}
+              className="p-4 bg-white text-black border-2 border-white rounded-full hover:bg-black hover:text-white transition-colors"
+              aria-label="Immagine precedente"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button 
+              onClick={scrollNext}
+              className="p-4 bg-white text-black border-2 border-white rounded-full hover:bg-black hover:text-white transition-colors"
+              aria-label="Immagine successiva"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
