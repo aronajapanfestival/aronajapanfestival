@@ -99,7 +99,7 @@ const Newsletter = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide uppercase"
                 >
                   Iscriviti
                 </Button>
