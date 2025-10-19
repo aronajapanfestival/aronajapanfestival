@@ -37,7 +37,7 @@
   },
   {
     "id": 6,
-    "name": "Miho",
+    "name": "Miho Yamada",
     "role": "Chef",
     "events": [
       "3",
@@ -48,7 +48,7 @@
   },
   {
     "id": 7,
-    "name": "Satomi",
+    "name": "Satomi Uga",
     "events": [
       "4"
     ],
@@ -56,7 +56,7 @@
   },
   {
     "id": 8,
-    "name": "Myriam",
+    "name": "Myriam Dal Dosso",
     "events": [
       "6",
       "9"
