@@ -1,6 +1,6 @@
 import kitsuneImage from "@/assets/kitsune.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
 
 const Festival = () => {
@@ -50,19 +50,15 @@ const Festival = () => {
                     },
                     {
                       title: "Laboratori",
-                      description: "Esperienze pratiche di calligrafia, origami, cerimonia del tè e molto altro"
+                      description: "Esperienze pratiche di disegno manga, poesia haiku e molto altro"
                     },
                     {
                       title: "Gastronomia",
                       description: "Degustazioni e dimostrazioni di cucina tradizionale giapponese"
                     },
                     {
-                      title: "Spettacoli",
-                      description: "Performance di arti marziali, danza tradizionale e musica dal vivo"
-                    },
-                    {
                       title: "Installazioni",
-                      description: "Mostre fotografiche, esposizioni d'arte e mercatini tematici"
+                      description: "Mostre, esposizioni d'arte, angolo libreria e mercatini tematici"
                     },
                     {
                       title: "Cinema",
@@ -81,15 +77,27 @@ const Festival = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="p-8 bg-background border-2 border-primary rounded-lg text-center">
+              <p className="text-lg text-foreground">
+                🎟️ <strong>Ingresso libero</strong> con tessera ARCI (tesseramento in loco; tessera annuale valida in tutti i circoli ARCI d'Italia e possibilità di ottenere sconti e agevolazioni presso le molte realtà convenzionate).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <Carousel setApi={setApi} className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {[
-                { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800", alt: "Tempio giapponese" },
-                { src: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800", alt: "Cultura giapponese" },
-                { src: "https://images.unsplash.com/photo-1576891230932-b35cea92ff0e?w=800", alt: "Cibo giapponese" },
-                { src: "https://images.unsplash.com/photo-1547618229-ade8a48f3908?w=800", alt: "Festival giapponese" },
+                { src: "/japan/j1.jpg", alt: "Arona Japan Festival" },
+                { src: "/japan/j2.jpg", alt: "Arona Japan Festival" },
+                { src: "/japan/j3.jpg", alt: "Arona Japan Festival" },
+                { src: "/japan/j4.jpg", alt: "Arona Japan Festival" },
               ].map((image, index) => (
                 <CarouselItem key={index}>
                   <div className="p-6 bg-white">
@@ -97,6 +105,7 @@ const Festival = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-[400px] md:h-[500px] object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </CarouselItem>
@@ -106,10 +115,10 @@ const Festival = () => {
             <CarouselPrevious className="hidden md:flex bg-black text-white border-white hover:bg-white hover:text-black" />
             <CarouselNext className="hidden md:flex bg-black text-white border-white hover:bg-white hover:text-black" />
           </Carousel>
-          
+
           {/* Frecce sotto - visibili solo su mobile */}
           <div className="flex md:hidden justify-center gap-3 mt-6">
-            <button 
+            <button
               onClick={scrollPrev}
               className="p-2 bg-white text-black border border-white rounded-full hover:bg-black hover:text-white transition-colors"
               aria-label="Immagine precedente"
@@ -118,7 +127,7 @@ const Festival = () => {
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
-            <button 
+            <button
               onClick={scrollNext}
               className="p-2 bg-white text-black border border-white rounded-full hover:bg-black hover:text-white transition-colors"
               aria-label="Immagine successiva"
@@ -138,19 +147,15 @@ const Festival = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-primary">Gli Organizzatori</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Il festival è organizzato da un team di appassionati della cultura giapponese, 
-                  in collaborazione con associazioni culturali locali e partner istituzionali. 
-                  Il nostro obiettivo è creare un ponte culturale tra l'Italia e il Giappone.
+                  Il festival è organizzato in collaborazione con l'Associazione Casa dei Popoli da un gruppo di appassionati della cultura giapponese sotto la direzione di Mayuko Sagawa. Al festival contribuiscono con il loro supporto aziende e associazioni che condividono l'obiettivo di creare un ponte culturale tra l'Italia e il Giappone.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold mb-4 text-primary">Partner e Sponsor</h2>
+                <h2 className="text-3xl font-bold mb-4 text-primary">Partner e Contributi</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Il festival è reso possibile grazie al supporto di partner e sponsor che condividono 
-                  la nostra passione per la cultura giapponese. Per informazioni su come diventare 
-                  partner del festival, contattaci all'indirizzo{" "}
-                  <a href="mailto:info@aronajapanfestival.it" className="text-primary hover:underline">
+                  Il festival è un'iniziativa senza scopo di lucro. È possibile sostenerlo con un contributo liberale per aiutare l'organizzazione nella copertura delle spese collegate all'evento. Per informazioni, contattaci all'indirizzo{" "}
+                  <a href="mailto:info@aronajapanfestival.it" className="text-primary underline hover:text-primary/80 font-medium">
                     info@aronajapanfestival.it
                   </a>
                 </p>

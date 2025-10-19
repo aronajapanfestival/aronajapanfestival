@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/aronajapanfestival.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,7 @@ const Navigation = () => {
     { to: "/protagonisti", label: "Protagonisti" },
     { to: "/dove-siamo", label: "Dove Siamo" },
     { to: "/seguici", label: "Seguici" },
+    { to: "/news", label: "News" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -33,7 +34,7 @@ const Navigation = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 text-sm font-medium tracking-wide uppercase transition-colors ${
+                className={`px-2 lg:px-4 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-colors whitespace-nowrap ${
                   isActive(link.to)
                     ? "text-primary"
                     : "text-foreground hover:text-primary"

@@ -1,0 +1,48 @@
+[
+  {
+    "id": 2,
+    "title": "Mostra di oggetti di uso quotidiano giapponesi",
+    "icon": "🏺",
+    "description": "Una piccola esposizione per scoprire la bellezza delle cose semplici: utensili, accessori e dettagli della vita di tutti i giorni in Giappone."
+  },
+  {
+    "id": 3,
+    "title": "Vestizione del kimono",
+    "icon": "👘",
+    "description": "Scopri la grazia e la ritualità dell'abito tradizionale giapponese, con dimostrazioni e prove guidate."
+  },
+  {
+    "id": 4,
+    "title": "Libreria del Giappone",
+    "icon": "📚",
+    "description": "Una selezione di libri, manga e saggi dedicati al Giappone, in collaborazione con la Feltrinelli di Arona.",
+    "who": [
+      "Libreria Feltrinelli di Arona"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Artigianato e ceramiche",
+    "icon": "🎨",
+    "description": "Famoso Shigarakiyaki ed oggetti unici realizzati a mano, tra estetica wabi-sabi e maestria artigianale."
+  },
+  {
+    "id": 6,
+    "title": "Pop Japan Corner",
+    "icon": "🎮",
+    "description": "Un piccolo spazio per gli amanti della cultura pop: action figure, disegni in stile manga e gadget ispirati all'immaginario nipponico."
+  },
+  {
+    "id": 7,
+    "title": "Corner di calligrafia",
+    "icon": "✍️",
+    "description": "Fatti scrivere il tuo nome in elegante calligrafia giapponese, un ricordo unico da portare a casa.",
+    "notes": "il corner sarà attivo in momenti dedicati nel corso della giornata - gli orari saranno segnalati direttamente all’area."
+  },
+  {
+    "id": 8,
+    "title": "L'angolo dei giochi",
+    "icon": "🪀",
+    "description": "Un'area dedicata al divertimento in stile giapponese, dove grandi e piccoli possono mettersi alla prova con giochi tradizionali e piccole sfide di abilità."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 2,
+    "name": "Mayuko Sagawa",
+    "role": "Direttore del Festival",
+    "events": [
+      "4"
+    ],
+    "photo": "mayukosagawa.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Stefania Viti",
+    "role": "Giornalista e scrittrice, laureata in Lingua e Letteratura giapponese a Ca’ Foscari, ha vissuto a Tokyo per dieci anni. E' autrice di saggi e romanzi dedicati al Giappone contemporaneo e alla sua cultura gastronomica. [Leggi di più ›](https://www.stefaniaviti.com/biografia/)",
+    "events": [
+      "5"
+    ],
+    "photo": "stefaniaviti.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Tiziano Bresciani",
+    "role": "Viaggiatore appassionato",
+    "events": [
+      "11"
+    ],
+    "photo": "sagoma-uomo.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Veronica \"Zibrah\" Giorgi",
+    "role": "Artista",
+    "events": [
+      "12"
+    ],
+    "photo": "sagoma-donna.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Miho",
+    "role": "Chef",
+    "events": [
+      "3",
+      "10",
+      "14"
+    ],
+    "photo": "sagoma-donna.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Satomi",
+    "events": [
+      "4"
+    ],
+    "photo": "sagoma-donna.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Myriam",
+    "events": [
+      "6",
+      "9"
+    ],
+    "photo": "sagoma-donna.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Alice \"Nebiru\"",
+    "events": [
+      "12"
+    ],
+    "photo": "sagoma-donna.jpeg"
+  }
+]

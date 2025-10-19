@@ -1,64 +1,44 @@
 import kitsuneImage from "@/assets/kitsune.png";
+import protagonistiData from "@/data/protagonisti.json";
+import programmaData from "@/data/programma.json";
+import ReactMarkdown from "react-markdown";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+interface Protagonist {
+  id: number;
+  name: string;
+  role?: string;
+  events?: string[];
+  photo: string;
+}
+
+interface ProgramEvent {
+  id: number;
+  day: string;
+  title: string;
+  from: string;
+  to?: string;
+  description?: string;
+  notes?: string;
+  who?: string[];
+  category: string;
+}
 
 const Protagonisti = () => {
-  const protagonists = [
-    {
-      name: "Prof. Yuki Tanaka",
-      role: "Storico",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
-      bio: "Docente di Storia del Giappone presso l'Università di Tokyo, specializzato nel periodo feudale e nella cultura samurai. Ha pubblicato numerosi saggi sulla storia giapponese.",
-      events: ["Conferenza: Storia del Giappone Feudale"]
-    },
-    {
-      name: "Maestra Sakura Yamamoto",
-      role: "Maestra di Cerimonia del Tè",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
-      bio: "Maestra certificata di cerimonia del tè con 20 anni di esperienza. Insegna l'arte del chanoyu e la filosofia zen che sta alla base di questa antica tradizione.",
-      events: ["Laboratorio: Cerimonia del Tè", "Installazione: Angolo Kimono"]
-    },
-    {
-      name: "Chef Hiroshi Nakamura",
-      role: "Chef Sushi",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
-      bio: "Chef con formazione a Tokyo, specializzato in cucina tradizionale giapponese e arte del sushi. Ha lavorato in ristoranti stellati in Giappone e Italia.",
-      events: ["Workshop: Preparazione Sushi", "Degustazione: Sake"]
-    },
-    {
-      name: "Akira Matsumoto",
-      role: "Maestro di Calligrafia",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
-      bio: "Artista e calligrafo con oltre 30 anni di esperienza. Specializzato nello stile kaisho e sosho, tiene workshop e mostre in tutto il mondo.",
-      events: ["Laboratorio: Calligrafia", "Installazione: Mostra Oggetti Quotidiani"]
-    },
-    {
-      name: "Kenji Watanabe",
-      role: "Musicista",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
-      bio: "Virtuoso dello shamisen, strumento tradizionale giapponese. Ha suonato in teatri e festival internazionali, portando la musica tradizionale alle nuove generazioni.",
-      events: ["Concerto: Shamisen"]
-    },
-    {
-      name: "Dr. Emiko Suzuki",
-      role: "Esperta di Cultura Pop",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
-      bio: "Docente di Media Studies specializzata in manga e anime. Autrice di saggi sulla cultura pop giapponese e il suo impatto globale.",
-      events: ["Conferenza: Manga e Anime", "Installazione: Mercatino Giapponese"]
-    },
-    {
-      name: "Maestro Takeshi Ito",
-      role: "Maestro di Kendo",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
-      bio: "7° Dan di Kendo, ha dedicato la sua vita alle arti marziali giapponesi. Insegna non solo la tecnica, ma anche i valori e la filosofia del bushido.",
-      events: ["Dimostrazione: Arti Marziali"]
-    },
-    {
-      name: "Yumi Kobayashi",
-      role: "Artista Origami",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop",
-      bio: "Artista dell'origami premiata internazionalmente. Le sue opere complesse hanno ridefinito i confini di quest'arte tradizionale giapponese.",
-      events: ["Laboratorio: Origami Avanzato", "Installazione: Mostra Oggetti Quotidiani"]
-    }
-  ];
+  const protagonists: Protagonist[] = protagonistiData;
+  const programma: ProgramEvent[] = programmaData;
+  const [selectedPerson, setSelectedPerson] = useState<Protagonist | null>(null);
+
+  // Helper function to get event details by ID
+  const getEventById = (eventId: string): ProgramEvent | undefined => {
+    return programma.find(event => event.id === parseInt(eventId));
+  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -77,54 +57,150 @@ const Protagonisti = () => {
 
             {/* Protagonists Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {protagonists.map((person, index) => (
+              {protagonists.map((person) => (
                 <div
-                  key={index}
-                  className="bg-card border-4 border-border hover:border-primary transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 overflow-hidden"
+                  key={person.id}
+                  onClick={() => person.events && person.events.length > 0 && setSelectedPerson(person)}
+                  className={`bg-card border-4 border-border hover:border-primary transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 overflow-hidden flex flex-col h-full ${
+                    person.events && person.events.length > 0 ? 'cursor-pointer' : ''
+                  }`}
                 >
                   {/* Photo - Panini style */}
-                  <div className="relative aspect-[3/3.5] overflow-hidden bg-gradient-to-b from-muted to-background">
+                  <div className="relative aspect-[3/3.5] overflow-visible bg-gradient-to-b from-muted to-background">
                     <img
-                      src={person.image}
+                      src={`/protagonisti/${person.photo}`}
                       alt={person.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <div className="bg-black/80 backdrop-blur-sm p-3 rounded">
-                        <h3 className="text-lg font-bold text-white mb-1">
-                          {person.name}
-                        </h3>
-                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">
-                          {person.role}
+                  </div>
+
+                  {/* Name and Role Box - overlapping photo and content */}
+                  <div className="relative -mt-[34px] mx-3 z-10">
+                    <div className="bg-black/90 backdrop-blur-sm p-3 rounded">
+                      <h3 className="text-lg font-bold text-white mb-1">
+                        {person.name}
+                      </h3>
+                      {person.role && (
+                        <p className="text-sm font-bold text-primary uppercase tracking-wide">
+                          {person.role.split('.')[0].split(',')[0]}
                         </p>
-                      </div>
+                      )}
                     </div>
                   </div>
 
                   {/* Bio */}
-                  <div className="p-5 bg-card">
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {person.bio}
-                    </p>
-
-                    {/* Events */}
-                    <div className="space-y-1">
-                      <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-2">
-                        Eventi:
-                      </p>
-                      {person.events.map((event, eventIndex) => (
-                        <div
-                          key={eventIndex}
-                          className="text-xs px-2 py-1 bg-primary/10 text-primary rounded"
+                  <div className="p-5 bg-card flex flex-col flex-grow">
+                    {person.role ? (
+                      <div className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
+                        <ReactMarkdown
+                          components={{
+                            a: ({ node, ...props }) => (
+                              <a
+                                {...props}
+                                className="text-primary underline hover:text-primary/80 font-medium"
+                                target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              />
+                            ),
+                            p: ({ node, ...props }) => <span {...props} />
+                          }}
                         >
-                          {event}
-                        </div>
-                      ))}
-                    </div>
+                          {person.role}
+                        </ReactMarkdown>
+                      </div>
+                    ) : (
+                      <div className="text-sm text-muted-foreground italic">
+                        Biografia non ancora disponibile
+                      </div>
+                    )}
+
+                    {/* Click hint for events */}
+                    {person.events && person.events.length > 0 && (
+                      <div className="mt-auto pt-4">
+                        <p className="text-xs text-center text-primary font-semibold uppercase tracking-wide">
+                          Clicca per vedere gli eventi →
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Event Modal */}
+            <Dialog open={!!selectedPerson} onOpenChange={() => setSelectedPerson(null)}>
+              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold">
+                    {selectedPerson?.name}
+                  </DialogTitle>
+                </DialogHeader>
+
+                {selectedPerson && (
+                  <div className="space-y-6">
+                    {/* Full Bio */}
+                    {selectedPerson.role && (
+                      <div className="text-base text-muted-foreground leading-relaxed">
+                        <ReactMarkdown
+                          components={{
+                            a: ({ node, ...props }) => (
+                              <a
+                                {...props}
+                                className="text-primary underline hover:text-primary/80 font-medium"
+                                target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              />
+                            ),
+                          }}
+                        >
+                          {selectedPerson.role}
+                        </ReactMarkdown>
+                      </div>
+                    )}
+
+                    {/* Events List */}
+                    {selectedPerson.events && selectedPerson.events.length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-bold mb-4 text-foreground">
+                          Eventi ({selectedPerson.events.length})
+                        </h3>
+                        <div className="space-y-4">
+                          {selectedPerson.events.map((eventId) => {
+                            const event = getEventById(eventId);
+                            if (!event) return null;
+
+                            return (
+                              <div key={eventId} className="p-4 bg-card border-2 border-border rounded-lg">
+                                <div className="flex items-start gap-4 mb-2">
+                                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase rounded">
+                                    {event.category}
+                                  </span>
+                                </div>
+                                <h4 className="text-base font-bold text-foreground mb-2">
+                                  {event.title}
+                                </h4>
+                                {event.description && (
+                                  <p className="text-sm text-muted-foreground mb-2">
+                                    {event.description}
+                                  </p>
+                                )}
+                                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                  <span>📅 {event.day.replace("/2025", "")}</span>
+                                  {event.from && (
+                                    <span>⏰ {event.from}{event.to ? `-${event.to}` : ''}</span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </DialogContent>
+            </Dialog>
 
             {/* Info Box */}
             <div className="mt-16 p-8 bg-primary/5 border-2 border-primary text-center">
@@ -132,7 +208,13 @@ const Protagonisti = () => {
                 <strong>Vuoi diventare protagonista del festival?</strong>
                 <br />
                 <span className="text-muted-foreground">
-                  Contattaci per proporre workshop, conferenze o esibizioni
+                  Contattaci per proporre workshop, conferenze o esibizioni.
+                  <br />
+                  Scrivi una mail a{" "}
+                  <a href="mailto:info@aronajapanfestival.it" className="text-primary underline hover:text-primary/80 font-medium">
+                    info@aronajapanfestival.it
+                  </a>{" "}
+                  per candidarti.
                 </span>
               </p>
             </div>

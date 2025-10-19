@@ -1,35 +1,67 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import kitsuneImage from "@/assets/kitsune.png";
+import programmaData from "@/data/programma.json";
+import ReactMarkdown from "react-markdown";
+
+interface ProgramEvent {
+  id: string;
+  day: string;
+  title: string;
+  from: string;
+  to?: string;
+  description?: string;
+  notes?: string;
+  who?: string[];
+  category: string;
+}
 
 const Programma = () => {
-  const [selectedDay, setSelectedDay] = useState<"day1" | "day2">("day1");
+  const [selectedDay, setSelectedDay] = useState<string>("15/11/2025");
   const [selectedFilter, setSelectedFilter] = useState<string>("tutti");
 
-  const filters = ["Tutti", "Conferenze", "Laboratori", "Spettacoli", "Gastronomia"];
+  // Extract unique days from data
+  const days = useMemo(() => {
+    const uniqueDays = Array.from(new Set(programmaData.map((event: ProgramEvent) => event.day)));
+    return uniqueDays.sort();
+  }, []);
 
-  const schedule = {
-    day1: [
-      { time: "10:00", title: "Apertura Festival", type: "generale", description: "Cerimonia di inaugurazione" },
-      { time: "11:00", title: "Storia del Giappone Feudale", type: "conferenze", description: "Con Prof. Tanaka" },
-      { time: "14:00", title: "Laboratorio di Calligrafia", type: "laboratori", description: "Per principianti" },
-      { time: "16:00", title: "Cerimonia del Tè", type: "laboratori", description: "Dimostrazione tradizionale" },
-      { time: "18:00", title: "Degustazione Sake", type: "gastronomia", description: "Con sommelier certificato" },
-      { time: "20:00", title: "Concerto di Shamisen", type: "spettacoli", description: "Musica tradizionale giapponese" },
-    ],
-    day2: [
-      { time: "10:00", title: "Manga e Anime", type: "conferenze", description: "L'evoluzione del fumetto giapponese" },
-      { time: "12:00", title: "Preparazione Sushi", type: "gastronomia", description: "Workshop pratico" },
-      { time: "14:00", title: "Laboratorio di Origami", type: "laboratori", description: "Tecniche avanzate" },
-      { time: "16:00", title: "Arti Marziali", type: "spettacoli", description: "Dimostrazione di Kendo" },
-      { time: "18:00", title: "Cinema Giapponese", type: "conferenze", description: "Proiezione e discussione" },
-      { time: "20:00", title: "Chiusura Festival", type: "generale", description: "Evento conclusivo" },
-    ],
+  // Extract unique categories (excluding "Generale")
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(
+      new Set(
+        programmaData
+          .map((event: ProgramEvent) => event.category)
+          .filter((cat) => cat.toLowerCase() !== "generale")
+      )
+    );
+    return uniqueCategories.sort();
+  }, []);
+
+  // Filter events by day and category
+  const filteredSchedule = useMemo(() => {
+    return programmaData
+      .filter((event: ProgramEvent) => event.day === selectedDay)
+      .filter(
+        (event: ProgramEvent) =>
+          selectedFilter === "tutti" || event.category.toLowerCase() === selectedFilter.toLowerCase()
+      )
+      .sort((a: ProgramEvent, b: ProgramEvent) => {
+        // Sort by time
+        const timeA = a.from.split(":").map(Number);
+        const timeB = b.from.split(":").map(Number);
+        return timeA[0] * 60 + timeA[1] - (timeB[0] * 60 + timeB[1]);
+      });
+  }, [selectedDay, selectedFilter]);
+
+  // Format time range
+  const formatTime = (from: string, to?: string) => {
+    if (to) {
+      return `${from}-${to}`;
+    }
+    return from;
   };
 
-  const filteredSchedule = schedule[selectedDay].filter(
-    (event) => selectedFilter === "tutti" || event.type === selectedFilter.toLowerCase()
-  );
 
   return (
     <div className="min-h-screen pt-20">
@@ -41,65 +73,126 @@ const Programma = () => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
                 Programma
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground mb-2">
                 Due giorni ricchi di eventi, attività e scoperte
+              </p>
+              <p className="text-base text-muted-foreground">
+                Ingresso libero con tessera ARCI • Alcuni eventi su prenotazione
+              </p>
+              <p className="text-base text-muted-foreground">
+                Sono previste attività con offerta minima • Cibo e bevande a pagamento
               </p>
             </div>
 
             {/* Day Selection */}
             <div className="flex flex-col md:flex-row justify-center gap-3 mb-12 px-4">
-              <Button
-                size="lg"
-                variant={selectedDay === "day1" ? "default" : "outline"}
-                onClick={() => setSelectedDay("day1")}
-                className="font-semibold tracking-wide uppercase w-full md:w-auto"
-              >
-                15 Novembre - Giorno 1
-              </Button>
-              <Button
-                size="lg"
-                variant={selectedDay === "day2" ? "default" : "outline"}
-                onClick={() => setSelectedDay("day2")}
-                className="font-semibold tracking-wide uppercase w-full md:w-auto"
-              >
-                16 Novembre - Giorno 2
-              </Button>
+              {days.map((day, index) => (
+                <Button
+                  key={day}
+                  size="lg"
+                  variant={selectedDay === day ? "default" : "outline"}
+                  onClick={() => setSelectedDay(day)}
+                  className="font-semibold tracking-wide uppercase w-full md:w-auto"
+                >
+                  {day.replace("/2025", "")} - Giorno {index + 1}
+                </Button>
+              ))}
             </div>
 
             {/* Filters */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {filters.map((filter) => (
+              <Button
+                size="sm"
+                variant={selectedFilter === "tutti" ? "default" : "outline"}
+                onClick={() => setSelectedFilter("tutti")}
+                className="text-sm tracking-wide uppercase"
+              >
+                Tutti
+              </Button>
+              {categories.map((category) => (
                 <Button
-                  key={filter}
+                  key={category}
                   size="sm"
-                  variant={selectedFilter === filter.toLowerCase() ? "default" : "outline"}
-                  onClick={() => setSelectedFilter(filter.toLowerCase())}
+                  variant={selectedFilter === category.toLowerCase() ? "default" : "outline"}
+                  onClick={() => setSelectedFilter(category.toLowerCase())}
                   className="text-sm tracking-wide uppercase"
                 >
-                  {filter}
+                  {category}
                 </Button>
               ))}
             </div>
 
             {/* Schedule */}
             <div className="space-y-4">
-              {filteredSchedule.map((event, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col md:flex-row gap-4 p-6 bg-card border border-border hover:border-primary transition-colors"
-                >
-                  <div className="flex-shrink-0 md:w-32">
-                    <span className="text-2xl font-bold text-primary">{event.time}</span>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-bold mb-2 text-foreground">{event.title}</h3>
-                    <p className="text-muted-foreground">{event.description}</p>
-                    <span className="inline-block mt-2 px-3 py-1 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase rounded">
-                      {event.type}
-                    </span>
-                  </div>
+              {filteredSchedule.length === 0 ? (
+                <div className="p-12 text-center bg-card border border-border">
+                  <p className="text-xl text-muted-foreground">
+                    Spiacenti, nella giornata del <strong>{selectedDay.replace("/2025", "")}</strong> non sono previsti eventi nella categoria <strong>{selectedFilter === "tutti" ? "selezionata" : selectedFilter}</strong>.
+                  </p>
                 </div>
-              ))}
+              ) : (
+                filteredSchedule.map((event) => (
+                  <div
+                    key={event.id}
+                    className="flex flex-col md:flex-row gap-4 p-6 bg-card border border-border hover:border-primary transition-colors"
+                  >
+                    <div className="flex-shrink-0 md:w-48">
+                      <span className="text-2xl font-bold text-primary">
+                        {formatTime(event.from, event.to)}
+                      </span>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold mb-2 text-foreground">{event.title}</h3>
+                      {event.who && event.who.length > 0 && (
+                        <p className="text-muted-foreground mb-2">
+                          {event.who.join(", ")}
+                        </p>
+                      )}
+                      {event.description && (
+                        <div className="text-muted-foreground mb-2">
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a
+                                  {...props}
+                                  className="text-primary underline hover:text-primary/80 font-medium"
+                                  target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                />
+                              ),
+                              p: ({ node, ...props }) => <span {...props} />
+                            }}
+                          >
+                            {event.description}
+                          </ReactMarkdown>
+                        </div>
+                      )}
+                      {event.notes && (
+                        <div className="text-sm text-muted-foreground italic mt-3 pt-3 border-t border-border/50">
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a
+                                  {...props}
+                                  className="text-primary underline hover:text-primary/80 font-medium"
+                                  target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                />
+                              ),
+                              p: ({ node, ...props }) => <span {...props} />
+                            }}
+                          >
+                            {event.notes}
+                          </ReactMarkdown>
+                        </div>
+                      )}
+                      <span className="inline-block mt-3 px-3 py-1 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase rounded">
+                        {event.category}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
 
             <div className="mt-16 p-8 bg-primary/5 border-2 border-primary text-center">

@@ -1,5 +1,5 @@
 import kitsuneImage from "@/assets/kitsune.png";
-import { MapPin, Clock, Euro } from "lucide-react";
+import { MapPin, Euro } from "lucide-react";
 
 const DoveSiamo = () => {
   return (
@@ -28,8 +28,13 @@ const DoveSiamo = () => {
 
             {/* Location Info */}
             <div className="mb-12 p-8 bg-card border-2 border-border">
-              <div className="flex items-start gap-4 mb-6">
-                <MapPin className="text-primary flex-shrink-0 mt-1" size={32} />
+              <div className="flex items-center gap-6 mb-6">
+                <img
+                  src="/cadepop.png"
+                  alt="Ca' de Pop"
+                  className="w-24 h-24 object-contain flex-shrink-0"
+                  loading="lazy"
+                />
                 <div>
                   <h2 className="text-2xl font-bold mb-2 text-foreground">Ca' de Pop</h2>
                   <p className="text-lg text-muted-foreground">
@@ -40,17 +45,16 @@ const DoveSiamo = () => {
 
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  La Casa del Popolo di Arona è uno spazio culturale storico che rappresenta il cuore 
-                  pulsante della comunità locale. Situata nel centro di Arona, Ca' de Pop offre 
-                  ambienti versatili e accoglienti perfetti per ospitare eventi culturali, workshop, 
-                  mostre e spettacoli.
+                  Ca' de Pop — al secolo la Casa del Popolo di Arona — è un luogo unico, dove cultura, creatività e socialità si intrecciano ogni giorno.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Tra il grande salone per concerti e mostre, la saletta piena di libri e l'accogliente angolo bar, la Casa ospita incontri, laboratori, spettacoli e momenti di convivialità.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Durante l'anno diventa anche scuola di italiano per persone da tutto il mondo e laboratorio di solidarietà grazie al progetto Sottobosco, spazio all'aperto dedicato a inclusione e creatività.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Con le sue sale ampie e gli spazi dedicati, la struttura si presta idealmente 
-                  ad accogliere il festival giapponese, creando un'atmosfera intima e coinvolgente 
-                  per tutti i partecipanti. Gli spazi sono stati organizzati per ospitare 
-                  contemporaneamente diverse attività: conferenze, laboratori, installazioni e 
-                  l'area gastronomica.
+                  È qui che il festival trova la sua casa naturale: un luogo che vive di idee, passioni e partecipazione.
                 </p>
               </div>
             </div>
@@ -81,54 +85,37 @@ const DoveSiamo = () => {
               </div>
             </div>
 
-            {/* Opening Hours */}
+            {/* About Arona */}
             <div className="mb-12 p-8 bg-card border-2 border-border">
-              <div className="flex items-start gap-4">
-                <Clock className="text-primary flex-shrink-0 mt-1" size={32} />
-                <div>
-                  <h2 className="text-2xl font-bold mb-4 text-foreground">
-                    Orari di Apertura
-                  </h2>
-                  <div className="space-y-2 text-lg">
-                    <p className="text-muted-foreground">
-                      <strong className="text-foreground">Sabato 15 Novembre:</strong> 10:00 - 22:00
-                    </p>
-                    <p className="text-muted-foreground">
-                      <strong className="text-foreground">Domenica 16 Novembre:</strong> 10:00 - 22:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Map Section */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
-                Mappa del Festival
-              </h2>
-              <div className="bg-muted border-2 border-border aspect-[16/10] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="text-muted-foreground mx-auto mb-4" size={64} />
-                  <p className="text-lg text-muted-foreground">
-                    Piantina del festival
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    (Inserire qui la mappa dettagliata degli spazi)
-                  </p>
-                </div>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Arona</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Arona (Novara), sulle sponde del Lago Maggiore, è un importante centro commerciale e turistico, che offre splendidi scenari naturalistici, ma anche importanti monumenti, possibilità di rilassarsi e di praticare tanti sport all'aperto.
+                </p>
+                <p>
+                  La sua posizione geografica la rende un punto strategico per lo snodo del turismo sul Lago Maggiore. La ridente cittadina piemontese, incastonata nel "Basso Lago", si trova infatti a soli poco più di 20 km dall'Aeroporto di Milano Malpensa e a circa 90 km dall'aeroporto di Milano Linate, aeroporti internazionali collegati con tutto il mondo. Inoltre il collegamento autostradale e ferroviario la rendono facilmente raggiungibile dalle varie parti d'Italia e dalle vicine nazioni europee.
+                </p>
+                <p className="text-sm">
+                  Ulteriori informazioni sulla città e sul turismo: {" "}
+                  <a href="https://www.comune.arona.no.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 font-medium">
+                    www.comune.arona.no.it
+                  </a>
+                  {" "}e{" "}
+                  <a href="https://www.prolocoarona.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 font-medium">
+                    www.prolocoarona.it
+                  </a>
+                </p>
               </div>
             </div>
 
             {/* How to Reach */}
             <div className="p-8 bg-card border-2 border-primary">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">
-                Come Raggiungerci
-              </h2>
-              
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Come Raggiungerci</h2>
+
               {/* Google Maps Embed */}
-              <div className="mb-6 rounded overflow-hidden border-2 border-border">
+              <div className="mb-8 rounded overflow-hidden border-2 border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.8!2d8.558!3d45.757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDQ1JzI1LjIiTiA4wrAzMyczMC40IkU!5e0!3m2!1sit!2sit!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.8!2d8.5558!3d45.7574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47865a1c6e6b6b6b%3A0x6e6b6b6b6b6b6b6b!2sVia%20Roma%2C%2076%2C%2028041%20Arona%20NO%2C%20Italy!5e0!3m2!1sen!2sit!4v1234567890"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
@@ -139,24 +126,85 @@ const DoveSiamo = () => {
                 ></iframe>
               </div>
 
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-6 text-muted-foreground">
                 <div>
-                  <h3 className="font-bold text-foreground mb-2">In Auto</h3>
-                  <p>
-                    La sede si trova nel centro di Arona, facilmente raggiungibile dall'autostrada A26. 
-                    Parcheggi disponibili nelle vicinanze.
+                  <h3 className="text-lg font-bold text-foreground mb-3">In aereo</h3>
+                  <p className="mb-2">
+                    Aeroporti Milano Malpensa e Milano Linate -{" "}
+                    <a href="https://www.sea-aeroportimilano.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      www.sea-aeroportimilano.it
+                    </a>
                   </p>
                 </div>
+
                 <div>
-                  <h3 className="font-bold text-foreground mb-2">In Treno</h3>
-                  <p>
-                    La stazione ferroviaria di Arona dista circa 10 minuti a piedi dalla sede.
+                  <h3 className="text-lg font-bold text-foreground mb-3">In treno</h3>
+                  <p className="mb-2">
+                    Stazione di Arona -{" "}
+                    <a href="https://www.trenitalia.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      www.trenitalia.it
+                    </a>
+                    {", "}
+                    <a href="https://www.trenord.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      www.trenord.it
+                    </a>
+                  </p>
+                  <p className="mb-1">Fermata delle tratte:</p>
+                  <ul className="list-disc list-inside ml-4 space-y-1">
+                    <li>Novara - Arona</li>
+                    <li>Milano - Domodossola</li>
+                    <li>Torino - Arona</li>
+                  </ul>
+                  <p className="mt-3">
+                    La stazione ferroviaria dista circa 10 minuti a piedi dalla sede.
                   </p>
                 </div>
+
                 <div>
-                  <h3 className="font-bold text-foreground mb-2">In Autobus</h3>
+                  <h3 className="text-lg font-bold text-foreground mb-3">In auto</h3>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>
+                      Autostrada A26 - A8 uscita al casello di Castelletto Ticino o Arona -{" "}
+                      <a href="https://www.autostrade.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                        www.autostrade.it
+                      </a>
+                    </li>
+                    <li>Strada Statale 32 da Novara</li>
+                    <li>Strada Statale 33 del Sempione</li>
+                  </ul>
+                  <p className="mt-3">
+                    Parcheggi disponibili nei dintorni della stazione.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">In battello</h3>
                   <p>
-                    Diverse linee urbane fermano nelle vicinanze di Via Roma.
+                    Imbarcadero di Arona -{" "}
+                    <a href="https://www.navigazionelaghi.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      www.navigazionelaghi.it
+                    </a>
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">In autobus</h3>
+                  <p>Con le autolinee: {" "}
+                    <a href="https://www.pirazzi.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      Pirazzi
+                    </a>
+                    {", "}
+                    <a href="https://www.comazzibus.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      Comazzi
+                    </a>
+                    {", "}
+                    <a href="https://www.stnnet.it/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      Stn
+                    </a>
+                    {", "}
+                    <a href="https://www.safduemila.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      S.A.F. duemila
+                    </a>
                   </p>
                 </div>
               </div>

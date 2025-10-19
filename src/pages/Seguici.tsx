@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
-import { Mail, Instagram, Facebook } from "lucide-react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Mail, Instagram, Facebook, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/hooks/use-toast";
 import kitsune from "@/assets/kitsune.png";
 
 const Seguici = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [acceptPrivacy, setAcceptPrivacy] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     // Load Instagram embed script
@@ -35,36 +28,17 @@ const Seguici = () => {
     document.body.appendChild(tiktokScript);
 
     return () => {
-      document.body.removeChild(instagramScript);
-      document.body.removeChild(facebookScript);
-      document.body.removeChild(tiktokScript);
+      if (document.body.contains(instagramScript)) {
+        document.body.removeChild(instagramScript);
+      }
+      if (document.body.contains(facebookScript)) {
+        document.body.removeChild(facebookScript);
+      }
+      if (document.body.contains(tiktokScript)) {
+        document.body.removeChild(tiktokScript);
+      }
     };
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!acceptPrivacy) {
-      toast({
-        title: "Attenzione",
-        description: "Devi accettare l'informativa sulla privacy per iscriverti.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    console.log("Newsletter signup:", { name, email });
-    
-    toast({
-      title: "Iscrizione completata!",
-      description: "Grazie per esserti iscritto alla nostra newsletter.",
-    });
-    
-    setIsSubmitted(true);
-    setEmail("");
-    setName("");
-    setAcceptPrivacy(false);
-  };
 
   return (
     <div className="min-h-screen pt-20 pb-12">
@@ -88,7 +62,7 @@ const Seguici = () => {
           {/* Social Media Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Instagram */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <Instagram className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Instagram</h2>
@@ -122,7 +96,7 @@ const Seguici = () => {
             </div>
 
             {/* Facebook */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <Facebook className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Facebook</h2>
@@ -161,7 +135,7 @@ const Seguici = () => {
             </div>
 
             {/* TikTok */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1 h-[650px] flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="text-primary"
@@ -204,65 +178,20 @@ const Seguici = () => {
           </div>
 
           {/* Newsletter Section */}
-          <div className="max-w-2xl mx-auto bg-card border-2 border-border p-8 rounded-lg">
+          <div className="max-w-2xl mx-auto bg-primary/5 border-2 border-primary p-8 rounded-lg text-center">
             <div className="flex items-center gap-2 mb-6 justify-center">
               <Mail className="text-primary" size={32} />
               <h2 className="text-3xl font-bold text-foreground">Newsletter</h2>
             </div>
-            <p className="text-muted-foreground mb-6 text-center">
+            <p className="text-muted-foreground mb-6">
               Iscriviti alla nostra newsletter per ricevere aggiornamenti esclusivi sul festival
             </p>
-
-            {isSubmitted ? (
-              <div className="text-center py-8">
-                <div className="text-6xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Grazie per l'iscrizione!
-                </h3>
-                <p className="text-muted-foreground">
-                  Riceverai presto le ultime novità sul festival.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    type="text"
-                    placeholder="Nome"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div className="flex items-start space-x-2">
-                  <Checkbox
-                    id="privacy"
-                    checked={acceptPrivacy}
-                    onCheckedChange={(checked) => setAcceptPrivacy(checked as boolean)}
-                  />
-                  <label
-                    htmlFor="privacy"
-                    className="text-sm text-muted-foreground leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Accetto l'informativa sulla privacy e il trattamento dei dati personali
-                  </label>
-                </div>
-                <Button type="submit" className="w-full">
-                  Iscriviti
-                </Button>
-              </form>
-            )}
+            <Link to="/newsletter">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide uppercase">
+                Iscriviti alla Newsletter
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

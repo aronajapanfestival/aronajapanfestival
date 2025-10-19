@@ -4,10 +4,31 @@ import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
-import ajfLogo from "@/assets/ajf-logo.png";
-import ajfLogoCircle from "@/assets/ajf-logo-circle.png";
+import ajfLogo from "@/assets/aronajapanfestival.png";
+import newsData from "@/data/news.json";
+import { useMemo } from "react";
+import { createSlug, parseDate, getPreview } from "@/lib/newsUtils";
+
+interface NewsItem {
+  id: number;
+  title: string;
+  date: string;
+  category: string;
+  text: string;
+}
 
 const Home = () => {
+  // Get latest 3 news, sorted by date (most recent first)
+  const latestNews = useMemo(() => {
+    return (newsData as NewsItem[])
+      .sort((a, b) => {
+        const dateA = parseDate(a.date);
+        const dateB = parseDate(b.date);
+        return dateB.getTime() - dateA.getTime();
+      })
+      .slice(0, 3);
+  }, []);
+
   return (
     <div className="min-h-screen relative">
       {/* Red Accent Bar - Full Page */}
@@ -105,43 +126,28 @@ const Home = () => {
             Ultime News
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Ospiti Speciali Annunciati",
-                image: kitsuneImage,
-                text: "Siamo entusiasti di annunciare la presenza di ospiti speciali che condivideranno la loro esperienza sulla cultura giapponese contemporanea..."
-              },
-              {
-                title: "Workshop di Calligrafia",
-                image: kitsuneImage,
-                text: "Iscriviti al nostro workshop di calligrafia giapponese, un'esperienza unica per imparare l'arte antica della scrittura tradizionale..."
-              },
-              {
-                title: "Menu Gastronomico Svelato",
-                image: kitsuneImage,
-                text: "Scopri il menu speciale del festival con piatti tradizionali preparati da chef esperti nella cucina giapponese autentica..."
-              }
-            ].map((news, index) => (
-              <a 
-                key={index} 
-                href="#" 
-                className="block bg-background/10 backdrop-blur-sm border-2 border-background/20 p-4 rounded hover:border-primary hover:bg-background/15 transition-all duration-300 group cursor-pointer"
-              >
-                <h3 className="font-bold text-lg mb-3 text-background group-hover:text-primary transition-colors duration-300">{news.title}</h3>
-                <div className="flex gap-4">
-                  <div className="bg-white rounded flex-shrink-0 p-2">
-                    <img 
-                      src={news.image} 
-                      alt={news.title}
-                      className="w-24 h-16 object-contain"
-                    />
+            {latestNews.map((news) => {
+              const slug = createSlug(news.title);
+              return (
+                <Link
+                  key={news.id}
+                  to={`/news/${slug}-${news.id}`}
+                  className="block bg-background/10 backdrop-blur-sm border-2 border-background/20 p-4 rounded hover:border-primary hover:bg-background/15 transition-all duration-300 group cursor-pointer flex flex-col"
+                >
+                  <h3 className="font-bold text-lg mb-3 text-background group-hover:text-primary transition-colors duration-300 min-h-[3.5rem]">
+                    {news.title}
+                  </h3>
+                  <p className="text-sm text-background/80 line-clamp-3 mb-4 flex-grow">
+                    {getPreview(news.text, 100)}
+                  </p>
+                  <div className="flex justify-end">
+                    <span className="text-sm font-semibold text-primary group-hover:underline">
+                      Leggi tutto →
+                    </span>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-background/80 line-clamp-3">{news.text}</p>
-                  </div>
-                </div>
-              </a>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -211,13 +217,13 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
-          <img 
-            src={ajfLogoCircle} 
-            alt="Arona Japan Festival" 
+          <img
+            src={ajfLogo}
+            alt="Arona Japan Festival"
             className="w-40 h-40 mx-auto mb-8"
           />
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Non Perdere Nessun Aggiornamento
+            Resta Aggiornato
           </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-80 max-w-3xl mx-auto">
             Iscriviti alla nostra newsletter per ricevere tutte le novità sul programma, 

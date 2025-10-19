@@ -1,32 +1,17 @@
 import kitsuneImage from "@/assets/kitsune.png";
+import installazioniData from "@/data/installazioni.json";
+
+interface Installation {
+  id: string;
+  title: string;
+  icon: string;
+  description: string;
+  who?: string[];
+  notes?: string;
+}
 
 const Installazioni = () => {
-  const installations = [
-    {
-      title: "Mostra: Oggetti di Uso Quotidiano",
-      description: "Un viaggio attraverso gli oggetti che caratterizzano la vita quotidiana giapponese, dalle bacchette ai furoshiki, dai bento alle ceramiche tradizionali. Scopri come il design e la funzionalità si fondono nell'estetica giapponese.",
-      icon: "🏺",
-      location: "Sala Principale"
-    },
-    {
-      title: "Angolo Kimono",
-      description: "Immergiti in un autentico angolo giapponese ricreato con cura. Scopri l'arte della vestizione del kimono, prova l'esperienza di indossarlo e fotografati in un ambiente che riproduce fedelmente un piccolo mondo giapponese.",
-      icon: "👘",
-      location: "Sala Tradizioni"
-    },
-    {
-      title: "Libreria del Viaggio",
-      description: "Una selezione curata di libri di viaggio, narrativa e saggistica dedicati al Giappone. Sfoglia le pagine che raccontano storie, tradizioni e esperienze del Sol Levante. Un angolo perfetto per gli amanti della lettura e della cultura giapponese.",
-      icon: "📚",
-      location: "Angolo Lettura"
-    },
-    {
-      title: "Mercatino Giapponese",
-      description: "Bancarelle con prodotti autentici giapponesi e articoli di cultura pop: manga, anime, gadget, snack tipici, oggettistica tradizionale e moderna. Un'occasione per portare a casa un pezzo di Giappone.",
-      icon: "🏮",
-      location: "Area Mercato"
-    }
-  ];
+  const installations: Installation[] = installazioniData;
 
   return (
     <div className="min-h-screen pt-20">
@@ -45,9 +30,9 @@ const Installazioni = () => {
 
             {/* Installations Grid */}
             <div className="space-y-8">
-              {installations.map((installation, index) => (
+              {installations.map((installation) => (
                 <div
-                  key={index}
+                  key={installation.id}
                   className="p-8 bg-card border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="flex flex-col md:flex-row gap-6">
@@ -61,11 +46,16 @@ const Installazioni = () => {
                       <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                         {installation.description}
                       </p>
-                      <div className="flex items-center gap-2">
-                        <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
-                          📍 {installation.location}
-                        </span>
-                      </div>
+                      {installation.who && installation.who.length > 0 && (
+                        <p className="text-base text-muted-foreground italic mb-3">
+                          A cura di {installation.who.join(", ")}
+                        </p>
+                      )}
+                      {installation.notes && (
+                        <p className="text-sm text-muted-foreground italic mt-3 pt-3 border-t border-border/50">
+                          {installation.notes}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -79,10 +69,10 @@ const Installazioni = () => {
                   Orari di Apertura
                 </h3>
                 <p className="text-lg text-muted-foreground mb-2">
-                  <strong>15 Novembre:</strong> 10:00 - 20:00
+                  <strong>Sabato 15 Novembre:</strong> 15:00 - 19:30
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  <strong>16 Novembre:</strong> 10:00 - 20:00
+                  <strong>Domenica 16 Novembre:</strong> 11:00 - 18:00
                 </p>
                 <p className="text-sm text-muted-foreground mt-4">
                   Tutte le installazioni sono accessibili gratuitamente durante l'orario di apertura del festival

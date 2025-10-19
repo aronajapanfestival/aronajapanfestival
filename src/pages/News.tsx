@@ -1,63 +1,52 @@
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState, useMemo } from "react";
+import newsData from "@/data/news.json";
+import kitsuneImage from "@/assets/kitsune.png";
+import { createSlug, parseDate, getPreview } from "@/lib/newsUtils";
 
 interface NewsItem {
-  id: string;
-  slug: string;
+  id: number;
   title: string;
   date: string;
-  preview: string;
-  image?: string;
+  category: string;
+  text: string;
 }
 
-const newsData: NewsItem[] = [
-  {
-    id: "1",
-    slug: "inaugurazione-festival-2024",
-    title: "Inaugurazione Festival 2024: Un Successo Straordinario",
-    date: "2024-10-15",
-    preview: "La prima edizione dell'Arona Japan Festival ha superato ogni aspettativa, con migliaia di visitatori che hanno partecipato alle attività culturali giapponesi..."
-  },
-  {
-    id: "2",
-    slug: "workshop-calligrafia-giapponese",
-    title: "Workshop di Calligrafia Giapponese: Grande Partecipazione",
-    date: "2024-10-10",
-    preview: "Il workshop di calligrafia giapponese ha registrato il tutto esaurito. I partecipanti hanno avuto l'opportunità di imparare l'arte dello shodo con maestri esperti..."
-  },
-  {
-    id: "3",
-    slug: "annuncio-programma-2025",
-    title: "Annunciato il Programma per l'Edizione 2025",
-    date: "2024-10-05",
-    preview: "Siamo entusiasti di annunciare le prime anticipazioni del programma per la prossima edizione del festival, che si terrà nel 2025 con ancora più eventi e sorprese..."
-  },
-  {
-    id: "4",
-    slug: "partnership-culturale-giappone",
-    title: "Nuova Partnership Culturale con il Giappone",
-    date: "2024-09-28",
-    preview: "L'Arona Japan Festival ha siglato una partnership con importanti istituzioni culturali giapponesi per portare autentiche esperienze tradizionali ai visitatori...",
-  },
-  {
-    id: "5",
-    slug: "volontari-cercasi",
-    title: "Cercasi Volontari per la Prossima Edizione",
-    date: "2024-09-20",
-    preview: "Stiamo cercando volontari appassionati di cultura giapponese per aiutarci a organizzare la prossima edizione del festival. Un'opportunità unica di fare esperienza...",
-  }
-];
-
 const News = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Sort news by date (most recent first) and filter by category
+  const sortedAndFilteredNews = useMemo(() => {
+    let filtered = newsData as NewsItem[];
+
+    if (selectedCategory) {
+      filtered = filtered.filter(news => news.category === selectedCategory);
+    }
+
+    return filtered.sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateB.getTime() - dateA.getTime(); // Most recent first
+    });
+  }, [selectedCategory]);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = newsData.map(news => news.category);
+    return Array.from(new Set(cats));
+  }, []);
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-b from-primary/5 to-background">
+      <section className="relative py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
+            <img src={kitsuneImage} alt="Kitsune" className="w-24 h-24 mx-auto mb-8" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-              News & Comunicati
+              News
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Tutte le ultime notizie e gli aggiornamenti sull'Arona Japan Festival
@@ -66,39 +55,88 @@ const News = () => {
         </div>
       </section>
 
-      {/* News List */}
-      <section className="py-12 md:py-16">
+      {/* Category Filter */}
+      <section className="pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {newsData.map((news) => (
-              <Link key={news.id} to={`/news/${news.slug}`} className="block mb-8">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
-                  <CardHeader>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Calendar size={16} />
-                      <time dateTime={news.date}>
-                        {new Date(news.date).toLocaleDateString("it-IT", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric"
-                        })}
-                      </time>
-                    </div>
-                    <CardTitle className="text-xl md:text-2xl group-hover:text-primary transition-colors">
-                      {news.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground line-clamp-3">
-                      {news.preview}
-                    </p>
-                    <span className="inline-block mt-4 text-primary font-semibold group-hover:underline">
-                      Leggi di più →
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            <div className="flex flex-wrap gap-3 justify-center">
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  selectedCategory === null
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card border-2 border-border text-muted-foreground hover:border-primary"
+                }`}
+              >
+                Tutte
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                    selectedCategory === category
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card border-2 border-border text-muted-foreground hover:border-primary"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* News List */}
+      <section className="pb-12 md:pb-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {sortedAndFilteredNews.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-xl text-muted-foreground">
+                  Nessuna news disponibile in questa categoria
+                </p>
+              </div>
+            ) : (
+              sortedAndFilteredNews.map((news) => {
+                const slug = createSlug(news.title);
+                return (
+                  <Link key={news.id} to={`/news/${slug}-${news.id}`} className="block mb-8">
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+                      <CardHeader>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase rounded">
+                            {news.category}
+                          </span>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Calendar size={16} />
+                            <time>
+                              {parseDate(news.date).toLocaleDateString("it-IT", {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric"
+                              })}
+                            </time>
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl md:text-2xl group-hover:text-primary transition-colors">
+                          {news.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground line-clamp-3">
+                          {getPreview(news.text)}
+                        </p>
+                        <span className="inline-block mt-4 text-primary font-semibold group-hover:underline">
+                          Leggi di più →
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })
+            )}
           </div>
         </div>
       </section>

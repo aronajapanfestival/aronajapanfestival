@@ -1,0 +1,161 @@
+[
+  {
+    "id": 2,
+    "day": "15/11/2025",
+    "title": "Apertura dei corner del Festival",
+    "from": "15:00",
+    "description": "Inaugurazione degli spazi tematici: artigianato, cultura, food e attività interattive per scoprire il Giappone in tutte le sue forme.",
+    "category": "Generale"
+  },
+  {
+    "id": 3,
+    "day": "15/11/2025",
+    "title": "Japanese Street Food corner con Sagami",
+    "from": "15:00",
+    "to": "17:00",
+    "description": "Scopri i sapori autentici del Giappone in versione street food: un viaggio culinario tra profumi e tradizioni.",
+    "who": [
+      "Sagami Italia"
+    ],
+    "category": "Food"
+  },
+  {
+    "id": 4,
+    "day": "15/11/2025",
+    "title": "Cooking Show - Preparazione dei DORAYAKI con Satomi e Mayuko",
+    "from": "16:00",
+    "to": "17:00",
+    "description": "Uno showcooking per i dorayaki amati da Doraemon.",
+    "who": [
+      "Mayuko Sagawa",
+      "Satomi"
+    ],
+    "category": "Food"
+  },
+  {
+    "id": 5,
+    "day": "15/11/2025",
+    "title": "Titolo da confermare *",
+    "from": "17:00",
+    "to": "18:00",
+    "description": "Un incontro per esplorare il Giappone contemporaneo attraverso la voce e le esperienze di Stefania Viti.",
+    "who": [
+      "Stefania Viti"
+    ],
+    "category": "Conferenze"
+  },
+  {
+    "id": 6,
+    "day": "15/11/2025",
+    "title": "Haiku: viaggio nell'essenza della poesia giapponese con Myriam",
+    "from": "18:00",
+    "to": "19:00",
+    "description": "Un viaggio nella poesia breve giapponese, dove tre versi bastano per raccontare un mondo.",
+    "who": [
+      "Myriam"
+    ],
+    "category": "Conferenze"
+  },
+  {
+    "id": 7,
+    "day": "15/11/2025",
+    "title": "Cena a ispirazione giapponese (su prenotazione)",
+    "from": "20:00",
+    "to": "21:30",
+    "description": "Un'esperienza gastronomica che fonde gusto, estetica e convivialità.",
+    "notes": "Posti limitati. E' possibile prenotare la cena inviare una mail a [info@aronajapanfestival.it](mailto:info@aronajapanfestival.it?subject=Prenotazione%20cena) indicando nome, recapito telefonico e numero di posti prenotati.",
+    "who": [
+      "Ca de Pop'"
+    ],
+    "category": "Food"
+  },
+  {
+    "id": 8,
+    "day": "15/11/2025",
+    "title": "Film",
+    "from": "21:30",
+    "to": "23:00",
+    "description": "Titolo in via di definizione",
+    "category": "Movies"
+  },
+  {
+    "id": 9,
+    "day": "16/11/2025",
+    "title": "Haiku: armonia tra metrica ed emozione con Myriam (laboratorio su prenotazione)",
+    "from": "09:30",
+    "to": "11:30",
+    "description": "Un laboratorio poetico per mettersi alla prova nella scrittura degli haiku, tra natura e introspezione.",
+    "notes": "Laboratorio a numero chiuso e offerta minima. Per informazioni o prenotazioni scrivete a  [info@aronajapanfestival.it](mailto:info@aronajapanfestival.it?subject=Laboratorio%20Haiku)",
+    "who": [
+      "Myriam"
+    ],
+    "category": "Laboratori"
+  },
+  {
+    "id": 10,
+    "day": "16/11/2025",
+    "title": "Japanese Brunch offerto da Sagami",
+    "from": "11:30",
+    "to": "14:30",
+    "description": "Un pranzo in stile giapponese per scoprire sapori nuovi e convivialità orientale",
+    "who": [
+      "Sagami Italia"
+    ],
+    "category": "Food"
+  },
+  {
+    "id": 11,
+    "day": "16/11/2025",
+    "title": "Racconti di viaggio",
+    "from": "11:30",
+    "to": "12:30",
+    "description": "Un viaggio nel viaggio: storie e immagini dal Giappone, viste con occhi curiosi e appassionati.",
+    "who": [
+      "Tiziano Bresciani"
+    ],
+    "category": "Conferenze"
+  },
+  {
+    "id": 12,
+    "day": "16/11/2025",
+    "title": "\"Realizza un iconico personaggio Ghibli\" con Zibrah e Nebiru",
+    "from": "14:30",
+    "to": "15:30",
+    "description": "Impara a disegnare in stile manga: personaggi, emozioni e tratti inconfondibili.",
+    "who": [
+      "Veronica \"Zibrah\" Giorgi",
+      "Alice \"Nebiru\""
+    ],
+    "category": "Laboratori"
+  },
+  {
+    "id": 13,
+    "day": "16/11/2025",
+    "title": "Film \"Il mio vicino Totoro\"",
+    "from": "15:30",
+    "to": "17:00",
+    "description": "Un classico intramontabile per chiudere il weekend con la magia dello Studio Ghibli.",
+    "category": "Movies"
+  },
+  {
+    "id": 14,
+    "day": "16/11/2025",
+    "title": "Merenda con tè matcha",
+    "from": "17:00",
+    "to": "18:00",
+    "description": "Un momento dolce e rilassante per salutarsi nel modo più giapponese possibile.",
+    "who": [
+      "Sagami Italia",
+      "Mayuko Sagawa"
+    ],
+    "category": "Food"
+  },
+  {
+    "id": 15,
+    "day": "16/11/2025",
+    "title": "Chiusura festival",
+    "from": "18:00",
+    "description": "Saluti e appuntamento al prossimo anno",
+    "category": "Generale"
+  }
+]
