@@ -11,7 +11,8 @@
   {
     "id": 3,
     "name": "Stefania Viti",
-    "role": "Giornalista e scrittrice, laureata in Lingua e Letteratura giapponese a Ca’ Foscari, ha vissuto a Tokyo per dieci anni. E' autrice di saggi e romanzi dedicati al Giappone contemporaneo e alla sua cultura gastronomica. [Leggi di più ›](https://www.stefaniaviti.com/biografia/)",
+    "bio": "Laureata in Lingua e Letteratura giapponese a Ca’ Foscari, ha vissuto a Tokyo per dieci anni. E' autrice di saggi e romanzi dedicati al Giappone contemporaneo e alla sua cultura gastronomica. [Leggi di più ›](https://www.stefaniaviti.com/biografia/)",
+    "role": "Giornalista e scrittrice,",
     "events": [
       "5"
     ],
@@ -52,7 +53,7 @@
     "events": [
       "4"
     ],
-    "photo": "sagoma-donna.jpeg"
+    "photo": "satomihuga.jpeg"
   },
   {
     "id": 8,
@@ -70,5 +71,12 @@
       "12"
     ],
     "photo": "sagoma-donna.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Yuri Kanagawa",
+    "bio": "Maestra nell'arte della vestizione del kimono",
+    "role": "Kitsuke-sensei",
+    "photo": "yurikanagawa.jpeg"
   }
 ]

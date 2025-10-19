@@ -14,6 +14,7 @@ interface Protagonist {
   id: number;
   name: string;
   role?: string;
+  bio?: string;
   events?: string[];
   photo: string;
 }
@@ -91,7 +92,7 @@ const Protagonisti = () => {
 
                   {/* Bio */}
                   <div className="p-5 bg-card flex flex-col flex-grow">
-                    {person.role ? (
+                    {person.bio ? (
                       <div className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
                         <ReactMarkdown
                           components={{
@@ -106,7 +107,7 @@ const Protagonisti = () => {
                             p: ({ node, ...props }) => <span {...props} />
                           }}
                         >
-                          {person.role}
+                          {person.bio}
                         </ReactMarkdown>
                       </div>
                     ) : (
@@ -140,7 +141,7 @@ const Protagonisti = () => {
                 {selectedPerson && (
                   <div className="space-y-6">
                     {/* Full Bio */}
-                    {selectedPerson.role && (
+                    {selectedPerson.bio && (
                       <div className="text-base text-muted-foreground leading-relaxed">
                         <ReactMarkdown
                           components={{
@@ -154,7 +155,7 @@ const Protagonisti = () => {
                             ),
                           }}
                         >
-                          {selectedPerson.role}
+                          {selectedPerson.bio}
                         </ReactMarkdown>
                       </div>
                     )}
