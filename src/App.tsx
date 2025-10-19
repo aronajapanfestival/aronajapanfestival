@@ -43,8 +43,9 @@ const App = () => (
               <Route path="/installazioni" element={<Installazioni />} />
               <Route path="/protagonisti" element={<Protagonisti />} />
               <Route path="/dove-siamo" element={<DoveSiamo />} />
-              <Route path="/newsletter" element={<Newsletter />} />
-              <Route path="/newsletter/conferma" element={<NewsletterConferma />} />
+              {/* Newsletter temporaneamente disabilitata */}
+              {/* <Route path="/newsletter" element={<Newsletter />} /> */}
+              {/* <Route path="/newsletter/conferma" element={<NewsletterConferma />} /> */}
               <Route path="/seguici" element={<Seguici />} />
               {/* Placeholder routes */}
               <Route path="/media" element={<Seguici />} />

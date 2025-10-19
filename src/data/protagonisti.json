@@ -2,7 +2,7 @@
   {
     "id": 2,
     "name": "Mayuko Sagawa",
-    "role": "Direttore del Festival",
+    "role": "Insegnante di lingua",
     "events": [
       "4"
     ],
@@ -33,7 +33,7 @@
     "events": [
       "12"
     ],
-    "photo": "sagoma-donna.jpeg"
+    "photo": "veronica.jpeg"
   },
   {
     "id": 6,
@@ -61,7 +61,7 @@
       "6",
       "9"
     ],
-    "photo": "sagoma-donna.jpeg"
+    "photo": "myriam.jpeg"
   },
   {
     "id": 9,

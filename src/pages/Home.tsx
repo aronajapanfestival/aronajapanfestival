@@ -98,11 +98,12 @@ const Home = () => {
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
-                <Link to="/newsletter">
+                {/* Newsletter temporaneamente disabilitata */}
+                {/* <Link to="/newsletter">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-bold tracking-wide uppercase text-base">
                     Newsletter
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -223,15 +224,15 @@ const Home = () => {
             className="w-40 h-40 mx-auto mb-8"
           />
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Resta Aggiornato
+            Segui il Festival
           </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-80 max-w-3xl mx-auto">
-            Iscriviti alla nostra newsletter per ricevere tutte le novità sul programma, 
-            gli ospiti e le attività del festival.
+            Seguici sui social per rimanere aggiornato su tutte le novità,
+            il programma e le attività del festival.
           </p>
-          <Link to="/newsletter">
+          <Link to="/seguici">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase text-lg shadow-xl">
-              Iscriviti Ora
+              Seguici sui Social
               <ArrowRight className="ml-2" size={24} />
             </Button>
           </Link>

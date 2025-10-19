@@ -177,8 +177,8 @@ const Seguici = () => {
             </div>
           </div>
 
-          {/* Newsletter Section */}
-          <div className="max-w-2xl mx-auto bg-primary/5 border-2 border-primary p-8 rounded-lg text-center">
+          {/* Newsletter Section - Temporaneamente disabilitata */}
+          {/* <div className="max-w-2xl mx-auto bg-primary/5 border-2 border-primary p-8 rounded-lg text-center">
             <div className="flex items-center gap-2 mb-6 justify-center">
               <Mail className="text-primary" size={32} />
               <h2 className="text-3xl font-bold text-foreground">Newsletter</h2>
@@ -192,7 +192,7 @@ const Seguici = () => {
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
