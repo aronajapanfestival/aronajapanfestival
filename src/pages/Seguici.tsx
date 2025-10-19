@@ -13,30 +13,30 @@ const Seguici = () => {
     instagramScript.async = true;
     document.body.appendChild(instagramScript);
 
-    // Load Facebook SDK
-    const facebookScript = document.createElement("script");
-    facebookScript.src = "https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v18.0";
-    facebookScript.async = true;
-    facebookScript.defer = true;
-    facebookScript.crossOrigin = "anonymous";
-    document.body.appendChild(facebookScript);
+    // Load Facebook SDK - Temporaneamente disabilitato
+    // const facebookScript = document.createElement("script");
+    // facebookScript.src = "https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v18.0";
+    // facebookScript.async = true;
+    // facebookScript.defer = true;
+    // facebookScript.crossOrigin = "anonymous";
+    // document.body.appendChild(facebookScript);
 
-    // Load TikTok embed script
-    const tiktokScript = document.createElement("script");
-    tiktokScript.src = "https://www.tiktok.com/embed.js";
-    tiktokScript.async = true;
-    document.body.appendChild(tiktokScript);
+    // Load TikTok embed script - Temporaneamente disabilitato
+    // const tiktokScript = document.createElement("script");
+    // tiktokScript.src = "https://www.tiktok.com/embed.js";
+    // tiktokScript.async = true;
+    // document.body.appendChild(tiktokScript);
 
     return () => {
       if (document.body.contains(instagramScript)) {
         document.body.removeChild(instagramScript);
       }
-      if (document.body.contains(facebookScript)) {
-        document.body.removeChild(facebookScript);
-      }
-      if (document.body.contains(tiktokScript)) {
-        document.body.removeChild(tiktokScript);
-      }
+      // if (document.body.contains(facebookScript)) {
+      //   document.body.removeChild(facebookScript);
+      // }
+      // if (document.body.contains(tiktokScript)) {
+      //   document.body.removeChild(tiktokScript);
+      // }
     };
   }, []);
 
@@ -60,9 +60,9 @@ const Seguici = () => {
           </div>
 
           {/* Social Media Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="flex justify-center mb-12">
             {/* Instagram */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col">
+            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col max-w-md w-full">
               <div className="flex items-center gap-2 mb-2">
                 <Instagram className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Instagram</h2>
@@ -95,8 +95,8 @@ const Seguici = () => {
               </div>
             </div>
 
-            {/* Facebook */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col">
+            {/* Facebook - Temporaneamente disabilitato */}
+            {/* <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden h-[650px] flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <Facebook className="text-primary" size={24} />
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">Facebook</h2>
@@ -132,10 +132,10 @@ const Seguici = () => {
                   </blockquote>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            {/* TikTok */}
-            <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1 h-[650px] flex flex-col">
+            {/* TikTok - Temporaneamente disabilitato */}
+            {/* <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1 h-[650px] flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="text-primary"
@@ -174,7 +174,7 @@ const Seguici = () => {
                   </section>
                 </blockquote>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Newsletter Section - Temporaneamente disabilitata */}

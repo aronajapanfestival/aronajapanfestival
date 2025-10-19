@@ -79,12 +79,13 @@ const Footer = () => {
               <a href="https://www.instagram.com/aronajapanfestival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://www.facebook.com/aronajapanfestival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+              {/* Facebook e TikTok temporaneamente disabilitati */}
+              {/* <a href="https://www.facebook.com/aronajapanfestival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
               <a href="https://www.tiktok.com/@aronajapanfestival" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="TikTok">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-              </a>
+              </a> */}
               <a href="mailto:info@aronajapanfestival.it" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>
