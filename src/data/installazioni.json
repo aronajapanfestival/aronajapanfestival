@@ -37,12 +37,19 @@
     "title": "Corner di calligrafia",
     "icon": "✍️",
     "description": "Fatti scrivere il tuo nome in elegante calligrafia giapponese, un ricordo unico da portare a casa.",
-    "notes": "il corner sarà attivo in momenti dedicati nel corso della giornata - gli orari saranno segnalati direttamente all’area."
+    "notes": "il corner sarà attivo in momenti dedicati nel corso della giornata – gli orari saranno segnalati direttamente all’area."
   },
   {
     "id": 8,
     "title": "L'angolo dei giochi",
     "icon": "🪀",
     "description": "Un'area dedicata al divertimento in stile giapponese, dove grandi e piccoli possono mettersi alla prova con giochi tradizionali e piccole sfide di abilità."
+  },
+  {
+    "id": 9,
+    "title": "Degustazione e vendita di sake",
+    "who": [
+      "Ca' de Pop"
+    ]
   }
 ]

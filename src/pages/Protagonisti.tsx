@@ -1,6 +1,7 @@
 import kitsuneImage from "@/assets/kitsune.png";
 import protagonistiData from "@/data/protagonisti.json";
 import programmaData from "@/data/programma.json";
+import installazioniData from "@/data/installazioni.json";
 import ReactMarkdown from "react-markdown";
 import { useState } from "react";
 import {
@@ -9,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 interface Protagonist {
   id: number;
@@ -16,6 +18,7 @@ interface Protagonist {
   role?: string;
   bio?: string;
   events?: string[];
+  installations?: string[];
   photo: string;
 }
 
@@ -31,14 +34,29 @@ interface ProgramEvent {
   category: string;
 }
 
+interface Installation {
+  id: number;
+  title: string;
+  icon?: string;
+  description?: string;
+  notes?: string;
+  who?: string[];
+}
+
 const Protagonisti = () => {
   const protagonists: Protagonist[] = protagonistiData;
   const programma: ProgramEvent[] = programmaData;
+  const installazioni: Installation[] = installazioniData;
   const [selectedPerson, setSelectedPerson] = useState<Protagonist | null>(null);
 
   // Helper function to get event details by ID
   const getEventById = (eventId: string): ProgramEvent | undefined => {
     return programma.find(event => event.id === parseInt(eventId));
+  };
+
+  // Helper function to get installation details by ID
+  const getInstallationById = (installationId: string): Installation | undefined => {
+    return installazioni.find(installation => installation.id === parseFloat(installationId));
   };
 
   return (
@@ -58,12 +76,17 @@ const Protagonisti = () => {
 
             {/* Protagonists Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {protagonists.map((person) => (
+              {protagonists.map((person) => {
+                const hasEvents = person.events && person.events.length > 0;
+                const hasInstallations = person.installations && person.installations.length > 0;
+                const isClickable = hasEvents || hasInstallations;
+
+                return (
                 <div
                   key={person.id}
-                  onClick={() => person.events && person.events.length > 0 && setSelectedPerson(person)}
+                  onClick={() => isClickable && setSelectedPerson(person)}
                   className={`bg-card border-4 border-border hover:border-primary transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 overflow-hidden flex flex-col h-full ${
-                    person.events && person.events.length > 0 ? 'cursor-pointer' : ''
+                    isClickable ? 'cursor-pointer' : ''
                   }`}
                 >
                   {/* Photo - Panini style */}
@@ -116,17 +139,17 @@ const Protagonisti = () => {
                       </div>
                     )}
 
-                    {/* Click hint for events */}
-                    {person.events && person.events.length > 0 && (
+                    {/* Click hint for events and installations */}
+                    {isClickable && (
                       <div className="mt-auto pt-4">
                         <p className="text-xs text-center text-primary font-semibold uppercase tracking-wide">
-                          Clicca per vedere gli eventi →
+                          Clicca per saperne di più →
                         </p>
                       </div>
                     )}
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
 
             {/* Event Modal */}
@@ -136,27 +159,35 @@ const Protagonisti = () => {
                   <DialogTitle className="text-2xl font-bold">
                     {selectedPerson?.name}
                   </DialogTitle>
+                  {selectedPerson?.role && (
+                    <p className="text-sm text-primary font-semibold uppercase tracking-wide mt-1">
+                      {selectedPerson.role}
+                    </p>
+                  )}
                 </DialogHeader>
 
                 {selectedPerson && (
                   <div className="space-y-6">
                     {/* Full Bio */}
                     {selectedPerson.bio && (
-                      <div className="text-base text-muted-foreground leading-relaxed">
-                        <ReactMarkdown
-                          components={{
-                            a: ({ node, ...props }) => (
-                              <a
-                                {...props}
-                                className="text-primary underline hover:text-primary/80 font-medium"
-                                target={props.href?.startsWith('http') ? '_blank' : undefined}
-                                rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              />
-                            ),
-                          }}
-                        >
-                          {selectedPerson.bio}
-                        </ReactMarkdown>
+                      <div className="p-4 bg-muted/30 rounded-lg border border-border">
+                        <div className="text-base text-muted-foreground leading-relaxed whitespace-pre-line">
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a
+                                  {...props}
+                                  className="text-primary underline hover:text-primary/80 font-medium"
+                                  target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                />
+                              ),
+                              p: ({ node, ...props }) => <p className="mb-3 last:mb-0" {...props} />
+                            }}
+                          >
+                            {selectedPerson.bio}
+                          </ReactMarkdown>
+                        </div>
                       </div>
                     )}
 
@@ -198,6 +229,61 @@ const Protagonisti = () => {
                         </div>
                       </div>
                     )}
+
+                    {/* Installations List */}
+                    {selectedPerson.installations && selectedPerson.installations.length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-bold mb-4 text-foreground">
+                          Installazioni ({selectedPerson.installations.length})
+                        </h3>
+                        <div className="space-y-4">
+                          {selectedPerson.installations.map((installationId) => {
+                            const installation = getInstallationById(installationId);
+                            if (!installation) return null;
+
+                            return (
+                              <div key={installationId} className="p-4 bg-card border-2 border-border rounded-lg">
+                                <div className="flex items-start gap-3 mb-2">
+                                  {installation.icon && (
+                                    <span className="text-2xl">{installation.icon}</span>
+                                  )}
+                                  <div className="flex-1">
+                                    <h4 className="text-base font-bold text-foreground mb-2">
+                                      {installation.title}
+                                    </h4>
+                                    {installation.description && (
+                                      <p className="text-sm text-muted-foreground mb-2">
+                                        {installation.description}
+                                      </p>
+                                    )}
+                                    {installation.notes && (
+                                      <p className="text-xs text-muted-foreground italic">
+                                        {installation.notes}
+                                      </p>
+                                    )}
+                                    {installation.who && installation.who.length > 0 && (
+                                      <p className="text-xs text-primary font-medium mt-2">
+                                        A cura di: {installation.who.join(", ")}
+                                      </p>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Close Button */}
+                    <div className="flex justify-center pt-4">
+                      <Button
+                        onClick={() => setSelectedPerson(null)}
+                        className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 text-lg"
+                      >
+                        Chiudi
+                      </Button>
+                    </div>
                   </div>
                 )}
               </DialogContent>

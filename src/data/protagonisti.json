@@ -2,6 +2,7 @@
   {
     "id": 2,
     "name": "Mayuko Sagawa",
+    "bio": "Vive sul Lago Maggiore da 20 anni, dove insegna lingua giapponeese e si impegna a fare da ponte tra il Giappone e l’Italia attraverso la lingua, la cultura e la gastronomia.",
     "role": "Insegnante di lingua",
     "events": [
       "4"
@@ -11,8 +12,8 @@
   {
     "id": 3,
     "name": "Stefania Viti",
-    "bio": "Laureata in Lingua e Letteratura giapponese a Ca’ Foscari, ha vissuto a Tokyo per dieci anni. E' autrice di saggi e romanzi dedicati al Giappone contemporaneo e alla sua cultura gastronomica. [Leggi di più ›](https://www.stefaniaviti.com/biografia/)",
-    "role": "Giornalista e scrittrice,",
+    "bio": "Laureata in Lingua e Letteratura giapponese a Ca’ Foscari, ha vissuto a Tokyo per dieci anni. È autrice di saggi e romanzi dedicati al Giappone contemporaneo e alla sua cultura gastronomica. [Leggi di più ›](https://www.stefaniaviti.com/biografia/)",
+    "role": "Giornalista e scrittrice",
     "events": [
       "5"
     ],
@@ -50,6 +51,7 @@
   {
     "id": 7,
     "name": "Satomi Uga",
+    "bio": "Si è trasferita in Italia nel 2000 per amore.\nHa due figli maggiorenni e ora si dedica alla cura della sua amata cagnolina.",
     "events": [
       "4"
     ],
@@ -58,9 +60,14 @@
   {
     "id": 8,
     "name": "Myriam Dal Dosso",
+    "bio": "Insegnante con  oltre 20 anni di esperienza, di cui 4 vissuti a New York, oltre ad un periodo come visiting teacher in Giappone nella prefettura scolastica di Shimane.  Amante dell'arte sotto ogni sua forma mi occupo di ricerca in ambito educativo e conduco laboratori artistici e percorsi formativi rivolti a scuole, università e imprese. Le esperienze lavorative all'estero sono state l'occasione per  raccogliere nuovi spunti, metodologie e strumenti didattici per implementare l'offerta formativa. Avvicinarmi alle arti tradizionali giapponesi è stata un'autentica scoperta che ha plasmato conoscenze e prospettive spendibili in diversi ambiti tra cui lo sviluppo delle soft skills. Recentemente collaborando con la casa editrice milanese Mondadori, ho curaro la selezione dei testi della collana \"Essenza Giappone\", raccolta dei capisaldi del pensiero giapponese alla base della filosofia millenaria del Sol Levante.",
+    "role": "Ricercatrice e formatrice",
     "events": [
       "6",
       "9"
+    ],
+    "installations": [
+      "2.0"
     ],
     "photo": "myriam.jpeg"
   },
@@ -75,8 +82,11 @@
   {
     "id": 10,
     "name": "Yuri Kanagawa",
-    "bio": "Maestra nell'arte della vestizione del kimono",
+    "bio": "Maestra nell'arte della vestizione del kimono. Partecipa sempre con piacere ad eventi di cultura Giapponese portando al sua passione per i Kimono.",
     "role": "Kitsuke-sensei",
+    "installations": [
+      "3.0"
+    ],
     "photo": "yurikanagawa.jpeg"
   }
 ]

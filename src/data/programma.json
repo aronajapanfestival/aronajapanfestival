@@ -10,7 +10,7 @@
   {
     "id": 3,
     "day": "15/11/2025",
-    "title": "Japanese Street Food corner con Sagami",
+    "title": "Japanese Street Food corner",
     "from": "15:00",
     "to": "17:00",
     "description": "Scopri i sapori autentici del Giappone in versione street food: un viaggio culinario tra profumi e tradizioni.",
@@ -22,13 +22,13 @@
   {
     "id": 4,
     "day": "15/11/2025",
-    "title": "Cooking Show - Preparazione dei DORAYAKI con Satomi e Mayuko",
+    "title": "Cooking Show – Preparazione dei dorayaki",
     "from": "16:00",
     "to": "17:00",
     "description": "Uno showcooking per i dorayaki amati da Doraemon.",
     "who": [
       "Mayuko Sagawa",
-      "Satomi"
+      "Satomi Uga"
     ],
     "category": "Food"
   },
@@ -47,12 +47,12 @@
   {
     "id": 6,
     "day": "15/11/2025",
-    "title": "Haiku: viaggio nell'essenza della poesia giapponese con Myriam",
+    "title": "Haiku: viaggio nell'essenza della poesia giapponese",
     "from": "18:00",
     "to": "19:00",
     "description": "Un viaggio nella poesia breve giapponese, dove tre versi bastano per raccontare un mondo.",
     "who": [
-      "Myriam"
+      "Myriam Dal Dosso"
     ],
     "category": "Conferenze"
   },
@@ -63,9 +63,9 @@
     "from": "20:00",
     "to": "21:30",
     "description": "Un'esperienza gastronomica che fonde gusto, estetica e convivialità.",
-    "notes": "Posti limitati. E' possibile prenotare la cena inviare una mail a [info@aronajapanfestival.it](mailto:info@aronajapanfestival.it?subject=Prenotazione%20cena) indicando nome, recapito telefonico e numero di posti prenotati.",
+    "notes": "Posti limitati. Per prenotazione 📞 [371 301 8165](tel:+393713018165) / 📞 [346 089 9372](tel:+393460899372) oppure su WhatsApp 💬 [371 301 8165](https://wa.me/393713018165?text=Prenotazione%20cena%20Arona%20Japan%20Festival) / 💬 [346 089 9372](https://wa.me/393460899372?text=Prenotazione%20cena%20Arona%20Japan%20Festival)",
     "who": [
-      "Ca de Pop'"
+      "Ca' de Pop"
     ],
     "category": "Food"
   },
@@ -76,28 +76,31 @@
     "from": "21:30",
     "to": "23:00",
     "description": "Un viaggio sospeso tra Tokyo e la solitudine, dove l’incontro tra due anime smarrite diventa poesia. Diretto da Sofia Coppola, un film delicato e malinconico che racconta l’incanto dell’incomprensione.",
+    "who": [
+      "Compagnia del Cinema San Carlo ETS"
+    ],
     "category": "Movies"
   },
   {
     "id": 9,
     "day": "16/11/2025",
-    "title": "Haiku: armonia tra metrica ed emozione con Myriam (laboratorio su prenotazione)",
+    "title": "Haiku: armonia tra metrica ed emozione (laboratorio su prenotazione)",
     "from": "09:30",
     "to": "11:30",
     "description": "Un laboratorio poetico per mettersi alla prova nella scrittura degli haiku, tra natura e introspezione.",
-    "notes": "Laboratorio a numero chiuso e offerta minima. Per informazioni o prenotazioni scrivete a  [info@aronajapanfestival.it](mailto:info@aronajapanfestival.it?subject=Laboratorio%20Haiku)",
+    "notes": "Laboratorio a numero chiuso. Per informazioni o prenotazioni scrivete a  [info@aronajapanfestival.it](mailto:info@aronajapanfestival.it?subject=Laboratorio%20Haiku)",
     "who": [
-      "Myriam"
+      "Myriam Dal Dosso"
     ],
     "category": "Laboratori"
   },
   {
     "id": 10,
     "day": "16/11/2025",
-    "title": "Japanese Brunch offerto da Sagami",
+    "title": "Japanese Brunch",
     "from": "11:30",
     "to": "14:30",
-    "description": "Un pranzo in stile giapponese per scoprire sapori nuovi e convivialità orientale",
+    "description": "Un pranzo in stile giapponese per scoprire sapori nuovi e convivialità orientale.",
     "who": [
       "Sagami Italia"
     ],
@@ -118,7 +121,7 @@
   {
     "id": 12,
     "day": "16/11/2025",
-    "title": "\"Realizza un iconico personaggio Ghibli\" con Zibrah e Nebiru",
+    "title": "\"Realizza un iconico personaggio Ghibli\"",
     "from": "14:30",
     "to": "15:30",
     "description": "Impara a disegnare in stile manga: personaggi, emozioni e tratti inconfondibili.",
@@ -135,6 +138,9 @@
     "from": "15:30",
     "to": "17:00",
     "description": "Un classico intramontabile per chiudere il weekend con la magia dello Studio Ghibli.",
+    "who": [
+      "Compagnia del Cinema San Carlo ETS"
+    ],
     "category": "Movies"
   },
   {
