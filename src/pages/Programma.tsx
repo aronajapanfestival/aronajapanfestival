@@ -79,9 +79,6 @@ const Programma = () => {
               <p className="text-base text-muted-foreground">
                 Ingresso libero con tessera ARCI • Alcuni eventi su prenotazione
               </p>
-              <p className="text-base text-muted-foreground">
-                Sono previste attività con offerta minima • Cibo e bevande a pagamento
-              </p>
             </div>
 
             {/* Day Selection */}

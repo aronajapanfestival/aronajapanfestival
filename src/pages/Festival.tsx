@@ -82,7 +82,7 @@ const Festival = () => {
           <div className="max-w-4xl mx-auto">
             <div className="p-8 bg-background border-2 border-primary rounded-lg text-center">
               <p className="text-lg text-foreground">
-                🎟️ <strong>Ingresso libero</strong> con tessera ARCI (tesseramento in loco; tessera annuale valida in tutti i circoli ARCI d'Italia e possibilità di ottenere sconti e agevolazioni presso le molte realtà convenzionate).
+                🎟️ <strong>Ingresso libero</strong> con tessera ARCI (tesseramento in loco; tessera valida fino a fine 2026 in tutti i circoli ARCI d'Italia e possibilità di ottenere sconti e agevolazioni presso le molte realtà convenzionate).
               </p>
             </div>
           </div>
