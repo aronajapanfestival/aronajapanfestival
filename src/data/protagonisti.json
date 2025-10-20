@@ -30,7 +30,8 @@
   },
   {
     "id": 5,
-    "name": "Veronica \"Zibrah\" Giorgi",
+    "name": "Zibrah Ziban",
+    "bio": "Zibrah Ziban è una fumettista ed illustratrice.\nDopo un iniziale percorso scolastico come Grafica Pubblicitaria ha affinato il disegno manuale frequentando la Scuola del Fumetto di Milano.",
     "role": "Artista",
     "events": [
       "12"
@@ -39,19 +40,21 @@
   },
   {
     "id": 6,
-    "name": "Miho Yamada",
+    "name": "Ristorante Sagami",
+    "bio": "Chef Miho Yamada è l'anima del Ristorante Sagami di Milano.",
     "role": "Chef",
     "events": [
       "3",
       "10",
       "14"
     ],
-    "photo": "sagoma-donna.jpeg"
+    "photo": "sagami.jpeg"
   },
   {
     "id": 7,
     "name": "Satomi Uga",
     "bio": "Si è trasferita in Italia nel 2000 per amore.\nHa due figli maggiorenni e ora si dedica alla cura della sua amata cagnolina.",
+    "role": "Esperta di cucina",
     "events": [
       "4"
     ],
