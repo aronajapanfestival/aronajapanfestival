@@ -68,12 +68,16 @@ const DoveSiamo = () => {
                     Tesseramento ARCI
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    L'ingresso al festival richiede il <strong>tesseramento ARCI</strong> dal costo di <strong>20 euro</strong>.
+                    L'ingresso al festival richiede il <strong>tesseramento ARCI</strong> dal costo di <strong>10 euro</strong>.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    La tessera ARCI è valida per l'anno in corso e permette l'accesso a tutti gli eventi 
-                    del festival e alle strutture ARCI su tutto il territorio nazionale. Il tesseramento 
-                    può essere effettuato direttamente all'ingresso della sede.
+                    La tessera ARCI è <strong>valida fino a Dicembre 2026</strong> e permette l'accesso a tutti gli eventi
+                    del festival e alle strutture ARCI su tutto il territorio nazionale. Il tesseramento può essere effettuato <strong>direttamente all'ingresso della sede</strong>.
+                    <br />
+                    La tessera dà inoltre diritto a <strong>sconti e agevolazioni</strong> presso locali, circoli, eventi e iniziative convenzionate con ARCI in tutta Italia. Scopri tutti i vantaggi sul sito{" "}
+                    <a href="https://www.arci.it/convenzioni/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                      Arci.it
+                    </a>.
                   </p>
                   <div className="bg-card p-4 rounded border border-border">
                     <p className="text-sm text-muted-foreground">
