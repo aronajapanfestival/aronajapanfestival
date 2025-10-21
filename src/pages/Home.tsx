@@ -195,15 +195,16 @@ const Home = () => {
                 "FILM",
                 "MUSICA",
               ].map((item, index) => (
-                <div
+                <Link
                   key={index}
-                  className="group relative py-8 px-4 md:px-6 bg-background border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg"
+                  to="/programma"
+                  className="group relative py-8 px-4 md:px-6 bg-background border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-all duration-300"></div>
                   <p className="relative text-sm md:text-base font-bold tracking-widest text-primary uppercase text-center">
                     {item}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
