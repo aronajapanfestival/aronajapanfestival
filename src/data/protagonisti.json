@@ -40,8 +40,8 @@
   },
   {
     "id": 6,
-    "name": "Ristorante Sagami",
-    "bio": "Chef Miho Yamada è l'anima del Ristorante Sagami di Milano.",
+    "name": "Miho Yamada",
+    "bio": "Chef Miho è una delle anime del Ristorante Sagami di Milano, che porta in città la vera tradizione della cucina giapponese, offrendo un’esperienza che unisce storia, cultura e sapori autentici.",
     "role": "Chef",
     "events": [
       "3",
