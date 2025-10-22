@@ -92,7 +92,7 @@ const Footer = () => {
             </div>
             <div className="mt-4">
               <p className="text-sm text-muted-foreground">Ca' de Pop</p>
-              <p className="text-sm text-muted-foreground">Via Roma 76/80</p>
+              <p className="text-sm text-muted-foreground">Via Roma 78/80</p>
               <p className="text-sm text-muted-foreground">Arona</p>
             </div>
           </div>

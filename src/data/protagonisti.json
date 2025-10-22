@@ -22,6 +22,7 @@
   {
     "id": 4,
     "name": "Tiziano Bresciani",
+    "bio": "Abitante di un paesino sopra il lago Maggiore, appassionato di viaggi, da ragazzo ha  vissuto per anni in Africa e precisamente in Costa d'Avorio e poi in Sud America . I molteplici viaggi lo hanno portato a conoscere il Giappone, paese del quale si è innamorato. Con i suoi racconti e scatti fotografici, fa conoscere la sua esperienza nel paese del sol levante.",
     "role": "Viaggiatore appassionato",
     "events": [
       "11"
@@ -41,17 +42,29 @@
   {
     "id": 6,
     "name": "Miho Yamada",
-    "bio": "Chef Miho è una delle anime del Ristorante Sagami di Milano, che porta in città la vera tradizione della cucina giapponese, offrendo un’esperienza che unisce storia, cultura e sapori autentici.",
+    "bio": "Con Tomo lavoriamo ogni giorno al ristorante SAGAMI di Milano per offrire ai nostri clienti il vero sapore del Giappone.\nDurante questo festival, vorremmo farvi gustare i nostri piatti più popolari - l’udon e gli immancabili yakitori - per farvi sentire un po’ del vero sapore del Giappone.",
     "role": "Chef",
     "events": [
       "3",
       "10",
       "14"
     ],
-    "photo": "sagami.jpeg"
+    "photo": "miho.jpeg"
   },
   {
     "id": 7,
+    "name": "Tomo Nakajima",
+    "bio": "Con Miho lavoriamo ogni giorno al ristorante SAGAMI di Milano per offrire ai nostri clienti il vero sapore del Giappone.\nDurante questo festival, vorremmo farvi gustare i nostri piatti più popolari - l’udon e gli immancabili yakitori - per farvi sentire un po’ del vero sapore del Giappone.",
+    "role": "Chef",
+    "events": [
+      "3",
+      "10",
+      "14"
+    ],
+    "photo": "tomo.jpeg"
+  },
+  {
+    "id": 8,
     "name": "Satomi Uga",
     "bio": "Si è trasferita in Italia nel 2000 per amore.\nHa due figli maggiorenni e ora si dedica alla cura della sua amata cagnolina.",
     "role": "Esperta di cucina",
@@ -61,7 +74,7 @@
     "photo": "satomihuga.jpeg"
   },
   {
-    "id": 8,
+    "id": 9,
     "name": "Myriam Dal Dosso",
     "bio": "Insegnante con  oltre 20 anni di esperienza, di cui 4 vissuti a New York, oltre ad un periodo come visiting teacher in Giappone nella prefettura scolastica di Shimane.  Amante dell'arte sotto ogni sua forma mi occupo di ricerca in ambito educativo e conduco laboratori artistici e percorsi formativi rivolti a scuole, università e imprese. Le esperienze lavorative all'estero sono state l'occasione per  raccogliere nuovi spunti, metodologie e strumenti didattici per implementare l'offerta formativa. Avvicinarmi alle arti tradizionali giapponesi è stata un'autentica scoperta che ha plasmato conoscenze e prospettive spendibili in diversi ambiti tra cui lo sviluppo delle soft skills. Recentemente collaborando con la casa editrice milanese Mondadori, ho curaro la selezione dei testi della collana \"Essenza Giappone\", raccolta dei capisaldi del pensiero giapponese alla base della filosofia millenaria del Sol Levante.",
     "role": "Ricercatrice e formatrice",
@@ -73,14 +86,6 @@
       "2.0"
     ],
     "photo": "myriam.jpeg"
-  },
-  {
-    "id": 9,
-    "name": "Alice \"Nebiru\"",
-    "events": [
-      "12"
-    ],
-    "photo": "sagoma-donna.jpeg"
   },
   {
     "id": 10,

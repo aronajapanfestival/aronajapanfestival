@@ -38,7 +38,7 @@ const DoveSiamo = () => {
                 <div>
                   <h2 className="text-2xl font-bold mb-2 text-foreground">Ca' de Pop</h2>
                   <p className="text-lg text-muted-foreground">
-                    Via Roma 76/80, Arona (NO)
+                    Via Roma 78/80, Arona (NO)
                   </p>
                 </div>
               </div>

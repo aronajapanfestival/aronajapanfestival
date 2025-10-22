@@ -79,7 +79,7 @@ const Home = () => {
                   <MapPin className="text-primary mt-1 flex-shrink-0" size={28} />
                   <div>
                     <p className="text-xl font-bold text-foreground">Ca' de Pop</p>
-                    <p className="text-lg text-muted-foreground">Via Roma 76/80, Arona</p>
+                    <p className="text-lg text-muted-foreground">Via Roma 78/80, Arona</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
