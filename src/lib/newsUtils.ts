@@ -18,6 +18,13 @@ export const parseDate = (dateStr: string): Date => {
 
 // Helper function to get preview from text
 export const getPreview = (text: string, maxLength: number = 150): string => {
-  const plainText = text.replace(/[*_[\]()]/g, "");
-  return plainText.length > maxLength ? plainText.substring(0, maxLength) + "..." : plainText;
+  // Remove markdown formatting and emoji
+  const plainText = text
+    .replace(/[*_[\]()]/g, "")
+    .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, "")
+    .trim();
+
+  // Use Array.from to handle Unicode correctly
+  const chars = Array.from(plainText);
+  return chars.length > maxLength ? chars.slice(0, maxLength).join("") + "..." : plainText;
 };

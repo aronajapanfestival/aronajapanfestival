@@ -13,6 +13,7 @@ import Festival from "./pages/Festival";
 import Programma from "./pages/Programma";
 import Installazioni from "./pages/Installazioni";
 import Protagonisti from "./pages/Protagonisti";
+import Food from "./pages/Food";
 import DoveSiamo from "./pages/DoveSiamo";
 import Newsletter from "./pages/Newsletter";
 import NewsletterConferma from "./pages/NewsletterConferma";
@@ -42,6 +43,7 @@ const App = () => (
               <Route path="/programma" element={<Programma />} />
               <Route path="/installazioni" element={<Installazioni />} />
               <Route path="/protagonisti" element={<Protagonisti />} />
+              <Route path="/food" element={<Food />} />
               <Route path="/dove-siamo" element={<DoveSiamo />} />
               {/* Newsletter temporaneamente disabilitata */}
               {/* <Route path="/newsletter" element={<Newsletter />} /> */}

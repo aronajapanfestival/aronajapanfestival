@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import kitsuneImage from "@/assets/kitsune.png";
 import programmaData from "@/data/programma.json";
@@ -76,8 +77,13 @@ const Programma = () => {
               <p className="text-xl text-muted-foreground mb-2">
                 Due giorni ricchi di eventi, attività e scoperte
               </p>
-              <p className="text-base text-muted-foreground">
+              <p className="text-base text-muted-foreground mb-3">
                 Ingresso libero con tessera ARCI • Alcuni eventi su prenotazione
+              </p>
+              <p className="text-base">
+                🍜 <Link to="/food" className="text-primary underline hover:text-primary/80 font-semibold">
+                  Scopri i piatti che verranno serviti durante il festival
+                </Link>
               </p>
             </div>
 

@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Countdown from "@/components/Countdown";
 import SeigaihaPattern from "@/components/SeigaihaPattern";
 import kitsuneImage from "@/assets/kitsune.png";
 import ajfLogo from "@/assets/aronajapanfestival.png";
 import newsData from "@/data/news.json";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 import { createSlug, parseDate, getPreview } from "@/lib/newsUtils";
 
 interface NewsItem {
@@ -18,6 +26,23 @@ interface NewsItem {
 }
 
 const Home = () => {
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    setCount(carouselApi.scrollSnapList().length);
+    setCurrent(carouselApi.selectedScrollSnap());
+
+    carouselApi.on("select", () => {
+      setCurrent(carouselApi.selectedScrollSnap());
+    });
+  }, [carouselApi]);
+
   // Get latest 3 news, sorted by date (most recent first)
   const latestNews = useMemo(() => {
     return (newsData as NewsItem[])
@@ -149,6 +174,148 @@ const Home = () => {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contributors Section */}
+      <section className="py-16 bg-card relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="mb-12">
+            <div className="inline-block bg-primary text-primary-foreground px-6 py-2 font-bold uppercase tracking-wider mb-4">
+              Contribuiscono all'evento
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              setApi={setCarouselApi}
+              className="w-full"
+            >
+              <CarouselContent>
+                {/* Grandangolo Viaggi */}
+                <CarouselItem>
+                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                    <div className="flex flex-col items-center mb-4">
+                      <img
+                        src="/contributors/grandangolo-viaggi-min.png"
+                        alt="Grandangolo Viaggi"
+                        className="h-24 object-contain mb-4"
+                      />
+                      <h3 className="text-xl font-bold text-foreground">Grandangolo Viaggi</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                      Siamo un'agenzia specializzata in viaggi tailor made e di gruppo.
+                      Non siamo solo agenti di viaggio con esperienza pluriennale, siamo soprattutto viaggiatori appassionati. Abbiamo imparato che il viaggio è molto più di un semplice spostamento: è un'opportunità per esplorare, crescere e creare ricordi indelebili.
+                      Siamo pronti ad accoglierti su appuntamento in un ambiente giovane e rilassato, per ascoltare le tue esigenze e costruire insieme il viaggio dei tuoi sogni.
+                      Samantha, Manuel, Milena
+                    </p>
+                    <div className="text-center">
+                      <a
+                        href="https://grandangoloviaggi.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+                      >
+                        Visita il sito
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </CarouselItem>
+
+                {/* Pianeta Lingua */}
+                <CarouselItem>
+                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                    <div className="flex flex-col items-center mb-4">
+                      <img
+                        src="/contributors/pianeta-lingua.png"
+                        alt="Pianeta Lingua"
+                        className="h-24 object-contain mb-4"
+                      />
+                      <h3 className="text-xl font-bold text-foreground">Pianeta Lingua</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                      Pianeta Lingua offre formazione linguistica personalizzata con insegnanti madrelingua. Da oltre 15 anni accompagna studenti e aziende nell'apprendimento delle lingue straniere con un metodo innovativo che mette lo studente al centro.
+                    </p>
+                    <div className="text-center">
+                      <a
+                        href="https://pianetalingua.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+                      >
+                        Visita il sito
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </CarouselItem>
+
+                {/* Tipolitografia Ala */}
+                <CarouselItem>
+                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                    <div className="flex flex-col items-center mb-4">
+                      <img
+                        src="/contributors/ala.png"
+                        alt="Tipolitografia Ala"
+                        className="h-24 object-contain mb-4"
+                      />
+                      <h3 className="text-xl font-bold text-foreground">Tipolitografia Ala</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                      Da 45 ANNI accanto a te. Grafica e stampa 4.0 a 360°. Supportiamo la crescita aziendale
+                      attraverso i nostri servizi di comunicazione. Dal 1976 ad oggi, per non fermarci mai.
+                    </p>
+                    <div className="text-center">
+                      <a
+                        href="https://www.tipolito-ala.it"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+                      >
+                        Visita il sito
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="left-0 md:-left-12" />
+              <CarouselNext className="right-0 md:-right-12" />
+            </Carousel>
+
+            {/* Dots indicator */}
+            <div className="flex justify-center gap-2 mt-6">
+              {Array.from({ length: count }).map((_, index) => (
+                <button
+                  key={index}
+                  className={`h-2 w-2 rounded-full transition-all ${
+                    index === current ? "bg-primary w-6" : "bg-border"
+                  }`}
+                  onClick={() => carouselApi?.scrollTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Donation message */}
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground">
+                Per supportare l'evento con una libera donazione, scrivi a{" "}
+                <a
+                  href="mailto:info@aronajapanfestival.it"
+                  className="text-primary underline hover:text-primary/80 font-medium"
+                >
+                  info@aronajapanfestival.it
+                </a>
+                {" "}- ogni contributo è prezioso!
+              </p>
+            </div>
           </div>
         </div>
       </section>

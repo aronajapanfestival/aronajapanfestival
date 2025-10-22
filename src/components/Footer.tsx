@@ -40,6 +40,11 @@ const Footer = () => {
                   Protagonisti
                 </Link>
               </li>
+              <li>
+                <Link to="/food" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Food
+                </Link>
+              </li>
             </ul>
           </div>
 
