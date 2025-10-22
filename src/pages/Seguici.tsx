@@ -4,6 +4,17 @@ import { Mail, Instagram, Facebook, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import kitsune from "@/assets/kitsune.png";
 
+// Declare Instagram embed API
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void;
+      };
+    };
+  }
+}
+
 const Seguici = () => {
 
   useEffect(() => {
@@ -11,7 +22,20 @@ const Seguici = () => {
     const instagramScript = document.createElement("script");
     instagramScript.src = "https://www.instagram.com/embed.js";
     instagramScript.async = true;
+
+    instagramScript.onload = () => {
+      // Process Instagram embeds after script loads
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
     document.body.appendChild(instagramScript);
+
+    // If Instagram script already loaded, process embeds
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
 
     // Load Facebook SDK - Temporaneamente disabilitato
     // const facebookScript = document.createElement("script");
