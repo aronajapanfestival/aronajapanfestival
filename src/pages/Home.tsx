@@ -268,8 +268,12 @@ const Home = () => {
                       <h3 className="text-xl font-bold text-foreground">Tipolitografia Ala</h3>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
-                      Da 45 ANNI accanto a te. Grafica e stampa 4.0 a 360°. Supportiamo la crescita aziendale
-                      attraverso i nostri servizi di comunicazione. Dal 1976 ad oggi, per non fermarci mai.
+                      Dal 1976 ad oggi, la nostra è una storia familiare in continua evoluzione: proponiamo stampe di alta qualità con tecnologie 4.0, per dare ai tuoi progetti un tocco sempre innovativo:
+                      <br /><br />
+                      • ATTENTA RICERCA DI MATERIALI<br />
+                      • TECNOLOGIE ALL'AVANGUARDIA<br />
+                      • PROGETTAZIONE E CONSULENZA GRAFICA<br />
+                      • STAMPA E FINITURE DI ALTA QUALITÀ A 360°
                     </p>
                     <div className="text-center">
                       <a
