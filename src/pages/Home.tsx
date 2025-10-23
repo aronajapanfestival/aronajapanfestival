@@ -194,12 +194,12 @@ const Home = () => {
                 loop: true,
               }}
               setApi={setCarouselApi}
-              className="w-full"
+              className="w-full px-8 md:px-0"
             >
-              <CarouselContent>
+              <CarouselContent className="px-0">
                 {/* Grandangolo Viaggi */}
                 <CarouselItem>
-                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/grandangolo-viaggi-min.png"
@@ -208,7 +208,7 @@ const Home = () => {
                       />
                       <h3 className="text-xl font-bold text-foreground">Grandangolo Viaggi</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
                       Siamo un'agenzia specializzata in viaggi tailor made e di gruppo.
                       Non siamo solo agenti di viaggio con esperienza pluriennale, siamo soprattutto viaggiatori appassionati. Abbiamo imparato che il viaggio è molto più di un semplice spostamento: è un'opportunità per esplorare, crescere e creare ricordi indelebili.
                       Siamo pronti ad accoglierti su appuntamento in un ambiente giovane e rilassato, per ascoltare le tue esigenze e costruire insieme il viaggio dei tuoi sogni.
@@ -230,7 +230,7 @@ const Home = () => {
 
                 {/* Pianeta Lingua */}
                 <CarouselItem>
-                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/pianeta-lingua.png"
@@ -239,7 +239,7 @@ const Home = () => {
                       />
                       <h3 className="text-xl font-bold text-foreground">Pianeta Lingua</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
                       Pianeta Lingua offre formazione linguistica personalizzata con insegnanti madrelingua. Da oltre 15 anni accompagna studenti e aziende nell'apprendimento delle lingue straniere con un metodo innovativo che mette lo studente al centro.
                     </p>
                     <div className="text-center">
@@ -258,7 +258,7 @@ const Home = () => {
 
                 {/* Tipolitografia Ala */}
                 <CarouselItem>
-                  <div className="p-8 bg-background border-2 border-border rounded-lg h-[350px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/ala.png"
@@ -267,7 +267,7 @@ const Home = () => {
                       />
                       <h3 className="text-xl font-bold text-foreground">Tipolitografia Ala</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
                       Da 45 ANNI accanto a te. Grafica e stampa 4.0 a 360°. Supportiamo la crescita aziendale
                       attraverso i nostri servizi di comunicazione. Dal 1976 ad oggi, per non fermarci mai.
                     </p>
@@ -285,8 +285,8 @@ const Home = () => {
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious className="left-0 md:-left-12" />
-              <CarouselNext className="right-0 md:-right-12" />
+              <CarouselPrevious className="-left-4 md:-left-12" />
+              <CarouselNext className="-right-4 md:-right-12" />
             </Carousel>
 
             {/* Dots indicator */}
