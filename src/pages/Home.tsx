@@ -199,7 +199,7 @@ const Home = () => {
               <CarouselContent className="px-0">
                 {/* Grandangolo Viaggi */}
                 <CarouselItem>
-                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] md:h-[450px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/grandangolo-viaggi-min.png"
@@ -230,7 +230,7 @@ const Home = () => {
 
                 {/* Pianeta Lingua */}
                 <CarouselItem>
-                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] md:h-[450px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/pianeta-lingua.png"
@@ -258,7 +258,7 @@ const Home = () => {
 
                 {/* Tipolitografia Ala */}
                 <CarouselItem>
-                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] flex flex-col">
+                  <div className="p-6 md:p-8 bg-background border-2 border-border rounded-lg h-[600px] md:h-[450px] flex flex-col">
                     <div className="flex flex-col items-center mb-4">
                       <img
                         src="/contributors/ala.png"
@@ -267,14 +267,17 @@ const Home = () => {
                       />
                       <h3 className="text-xl font-bold text-foreground">Tipolitografia Ala</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
-                      Dal 1976 ad oggi, la nostra è una storia familiare in continua evoluzione: proponiamo stampe di alta qualità con tecnologie 4.0, per dare ai tuoi progetti un tocco sempre innovativo:
-                      <br /><br />
-                      • ATTENTA RICERCA DI MATERIALI<br />
-                      • TECNOLOGIE ALL'AVANGUARDIA<br />
-                      • PROGETTAZIONE E CONSULENZA GRAFICA<br />
-                      • STAMPA E FINITURE DI ALTA QUALITÀ A 360°
-                    </p>
+                    <div className="text-sm text-muted-foreground leading-relaxed mb-6 text-left flex-grow overflow-hidden">
+                      <p className="mb-3">
+                        Dal 1976 ad oggi, la nostra è una storia familiare in continua evoluzione: proponiamo stampe di alta qualità con tecnologie 4.0, per dare ai tuoi progetti un tocco sempre innovativo:
+                      </p>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>ATTENTA RICERCA DI MATERIALI</li>
+                        <li>TECNOLOGIE ALL'AVANGUARDIA</li>
+                        <li>PROGETTAZIONE E CONSULENZA GRAFICA</li>
+                        <li>STAMPA E FINITURE DI ALTA QUALITÀ A 360°</li>
+                      </ul>
+                    </div>
                     <div className="text-center">
                       <a
                         href="https://www.tipolito-ala.it"
