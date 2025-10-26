@@ -96,5 +96,15 @@
       "3.0"
     ],
     "photo": "yurikanagawa.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Alice \"Nebiru\" Pettinaroli",
+    "bio": "Nata a Gozzano, rimase incantata fin da piccola dall'arte e in particolare dalla sua espressione tramite il disegno.\nFumetti e cartoni animati hanno accresciuto questo suo amore, facendo nascere in lei il desiderio di trasformare questo hobby nella sua professione.\nHa quindi frequentato la Scuolacomics di Torino, specializzandosi in colorazione e fumetto.",
+    "role": "Artista",
+    "events": [
+      "12"
+    ],
+    "photo": "alice.jpeg"
   }
 ]
